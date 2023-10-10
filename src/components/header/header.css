@@ -1,0 +1,90 @@
+.pizzahub__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.pizzahub__header-content h1{
+    max-width: 500px;
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 62px;
+    line-height: 75px;
+    letter-spacing: -0.04em;
+}
+.pizzahub__header-content h1>span{
+    color: #379237;
+}
+.pizzahub__header-content p{
+    max-width: 600px;
+font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--color-text);
+
+    margin-top: 1.5rem;
+}
+.pizzahub__header-content_btns button{
+    padding: 0.5rem 1rem;
+    margin: 2rem 1rem;
+    color: #fff;
+    background-color: #379237;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+.pizzahub__header-image img{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    height:700px;
+    width: 700px;
+}
+/* tablets devices */
+@media screen and (max-width: 1050px) {
+    .pizzahub__header {
+        padding: 2rem 4rem;
+    }
+    .pizzahub__header-image img{
+        position: static;
+        margin-right: 50px;
+        height:500px;
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .pizzahub__header {
+        padding: 2rem 4rem;
+    }
+    .pizzahub__header-image img{
+        opacity: .2;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        height:700px;
+        width: 700px;
+    }
+}
+/* mobile devices */
+@media screen and (max-width: 550px) {
+    .pozzahub__header {
+        padding: 2rem;
+    }
+    .pizzahub__header-image img{
+        opacity: .2;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        height:700px;
+        width: 700px;
+    }
+    
+
+    
+}
