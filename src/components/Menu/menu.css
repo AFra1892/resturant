@@ -21,7 +21,10 @@
     margin: 1rem;
     padding: .5rem;
 }
-.resturant__menu-food{
+.resturant__menu-food h1{
+    padding: 1rem;
+}
+.resturant__menu-food_items{
     display: flex;
     flex-direction: row;
 gap: 1rem;}
