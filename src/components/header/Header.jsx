@@ -13,9 +13,9 @@ export default function Header(){
                     <button type='button'>Book a Table</button>
                 </div>
             </div>
-            <div className="pizzahub__header-image">
+            {/* <div className="pizzahub__header-image">
                 <img src={pizza}/>
-            </div>
+            </div> */}
         </div>
     )
 }
