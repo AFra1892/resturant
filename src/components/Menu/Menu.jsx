@@ -19,7 +19,6 @@ import chicken8 from '../../assets/chicken/8peace.png'
 
 
 
-
 export default function Menu(){
     const [currentCat,setCurrentCat] = React.useState("pizza")
     const [itemImage,setItemImage] = React.useState([cheezeBurger,chickenBurger,mashromBurger])
@@ -34,10 +33,17 @@ export default function Menu(){
     const burger = [{name:"cheeze burger" , price:"12.99" },{name:"chicken burger" , price:"10.99", img:{chickenBurger}},{name:"mashroom burger" , price:"15.99" , img:{mashromBurger}}]
     const sandwich = [{name:"hot dog" , price:"12.99"},{name:"meatloaf" , price:"10.99"},{name:"chicken sandwich" , price:"15.99"}]
 
+    
+    
 
     function handle(event){
         setCurrentCat(event.target.id)
-        }
+    }
+  
+
+
+
+
     function menuItems(){
         const elements = []
         if(currentCat === "pizza"){
@@ -82,15 +88,14 @@ export default function Menu(){
         <div className="resturant__menu section__padding">
             <div className="resturant__menu-categories">
                 <ul className="resturant__menu-categories_items">
-                    <p><a id="pizza"  onClick={handle} >Pizza 🍕</a></p>
-                    <p><a id="pasta" onClick={handle}>Pasta 🍝</a></p>
-                    <p><a id="chicken" onClick={handle}>Chicken 🍗</a></p>
-                    <p><a id="burger" onClick={handle}>Burger 🍔</a></p>
-                    <p ><a id="sandwich" onClick={handle}>Sandwich 🥪</a></p>
+                <p><a id="pizza"  onClick={handle} >Pizza 🍕</a></p>
+                        <p><a id="pasta" onClick={handle}>Pasta 🍝</a></p>
+                        <p><a id="chicken" onClick={handle}>Chicken 🍗</a></p>
+                        <p><a id="burger" onClick={handle}>Burger 🍔</a></p>
+                        <p><a id="sandwich" onClick={handle}>Sandwich 🥪</a></p> 
                 </ul>
             </div>
             <div className="resturant__menu-food">
-
                 <h1>{currentCat}</h1>
                 <div className="resturant__menu-food_items">
                     {menuItems()}
