@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './menu.css'
 import MenuCard from "./MenuCard";
 import cheezeBurger from '../../assets/burger/cheeze-burger.png'
@@ -20,7 +20,7 @@ import chicken8 from '../../assets/chicken/8peace.png'
 
 
 export default function Menu(){
-    const [currentCat,setCurrentCat] = React.useState("pizza")
+    
     const [itemImage,setItemImage] = React.useState([cheezeBurger,chickenBurger,mashromBurger])
     const[pizzaImage,setPizzaImage] = React.useState([ham,tomato,vegtable])
     const[pastaImage,setPastaImage] = React.useState([pasta1,pasta2,pasta3])
@@ -34,49 +34,60 @@ export default function Menu(){
     const sandwich = [{name:"hot dog" , price:"12.99"},{name:"meatloaf" , price:"10.99"},{name:"chicken sandwich" , price:"15.99"}]
 
     
+    const [filter,setFilter] = React.useState('pizza')
+    const [products,setProducts] = React.useState(pizza)
+
+    React.useEffect(()=>{
+        if(filter === 'pizza'){
+            setProducts(pizza)
+        }
+        if(filter === 'pasta'){
+            setProducts(pasta)
+        }
+        if(filter === 'chicken'){
+            setProducts(chicken)
+        }
+        if(filter === 'burger'){
+            setProducts(burger)
+        }
+        if(filter === 'sandwich'){
+            setProducts(sandwich)
+        }
+    },[filter])
     
-
-    function handle(event){
-        setCurrentCat(event.target.id)
-    }
-  
-
-
-
-
     function menuItems(){
         const elements = []
-        if(currentCat === "pizza"){
-            pizza.map((item,index)=>{
+        if(filter === "pizza"){
+            products.map((item,index)=>{
                 elements.push(<MenuCard name={item.name} price={item.price} image={pizzaImage[index]}/>)
 
             })
             return elements
         }
-        else if(currentCat === "pasta"){
-            pasta.map((item,index)=>{
+        else if(filter === "pasta"){
+            products.map((item,index)=>{
                 elements.push(<MenuCard name={item.name} price={item.price} image={pastaImage[index]}/>)
 
             })
             return elements
         }
-        else if(currentCat === "chicken"){
-            chicken.map((item,index)=>{
+        else if(filter === "chicken"){
+            products.map((item,index)=>{
                 elements.push(<MenuCard name={item.name} price={item.price} image={chickenImage[index]}/>)
 
             })
             return elements
         }
-        else if(currentCat === "burger"){
-            burger.map((item,index)=>{
+        else if(filter === "burger"){
+            products.map((item,index)=>{
                 elements.push(<MenuCard name={item.name} price={item.price} image={itemImage[index]} />)
                 
 
             })
             return elements
         }
-        else if(currentCat === "sandwich"){
-            sandwich.map((item,index)=>{
+        else if(filter === "sandwich"){
+            products.map((item,index)=>{
                 elements.push(<MenuCard name={item.name} price={item.price} image={sandwichImage[index]}/>)
 
             })
@@ -88,11 +99,41 @@ export default function Menu(){
         <div className="resturant__menu section__padding">
             <div className="resturant__menu-categories">
                 <ul className="resturant__menu-categories_items">
-                <p><a id="pizza"  onClick={handle} >Pizza 🍕</a></p>
+                        {/* <p><a id="pizza"  onClick={handle} >Pizza 🍕</a></p>
                         <p><a id="pasta" onClick={handle}>Pasta 🍝</a></p>
                         <p><a id="chicken" onClick={handle}>Chicken 🍗</a></p>
                         <p><a id="burger" onClick={handle}>Burger 🍔</a></p>
-                        <p><a id="sandwich" onClick={handle}>Sandwich 🥪</a></p> 
+                        <p><a id="sandwich" onClick={handle}>Sandwich 🥪</a></p>  */}
+                    <button 
+                        onClick={()=>setFilter("pizza")}
+                        className={`filter-btn ${filter === 'pizza' ? "active-btn" : "" }`}
+                    >
+                        Pizza
+                    </button>
+                    <button 
+                        onClick={()=>setFilter("pasta")}
+                        className={`filter-btn ${filter === 'pasta' ? "active-btn" : "" }`}
+                    >
+                        Pasta
+                    </button>
+                    <button 
+                        onClick={()=>setFilter("chicken")}
+                        className={`filter-btn ${filter === 'chicken' ? "active-btn" : "" }`}
+                    >
+                        Chicken
+                    </button>
+                    <button 
+                        onClick={()=>setFilter("burger")}
+                        className={`filter-btn ${filter === 'burger' ? "active-btn" : "" }`}
+                    >
+                        Burger
+                    </button>
+                    <button 
+                        onClick={()=>setFilter("sandwich")}
+                        className={`filter-btn ${filter === 'sandwich' ? "active-btn" : "" }`}
+                    >
+                        Sandwich
+                    </button>
                 </ul>
             </div>
             <div className="resturant__menu-food">

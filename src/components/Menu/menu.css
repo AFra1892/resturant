@@ -27,7 +27,17 @@
 .resturant__menu-food_items{
     display: flex;
     flex-direction: row;
-gap: 1rem;}
+gap: 1rem;
+}
+.filter-btn{
+    background-color: transparent;
+    border: 1px solid #379237;
+    margin: 1rem;
+    padding: .5rem;
+}
+.active-btn{
+    background-color: #379237;
+}
 @media screen and (max-width: 1050px) {
     .resturant__menu{
         display: flex;
