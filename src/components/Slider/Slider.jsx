@@ -1,49 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-
+import './slider.css'
 const slideStyles = {
   width: "100%",
   height: "100%",
   borderRadius: "10px",
   backgroundSize: "cover",
   backgroundPosition: "center",
-};
-
-const rightArrowStyles = {
-  position: "absolute",
-  top: "50%",
-  transform: "translate(0, -50%)",
-  right: "32px",
-  fontSize: "45px",
-  color: "#fff",
-  zIndex: 1,
-  cursor: "pointer",
-};
-
-const leftArrowStyles = {
-  position: "absolute",
-  top: "50%",
-  transform: "translate(0, -50%)",
-  left: "32px",
-  fontSize: "45px",
-  color: "#fff",
-  zIndex: 1,
-  cursor: "pointer",
-};
-
-const sliderStyles = {
-  position: "relative",
-  height: "100%",
-};
-
-const dotsContainerStyles = {
-  display: "flex",
-  justifyContent: "center",
-};
-
-const dotStyle = {
-  margin: "0 3px",
-  cursor: "pointer",
-  fontSize: "20px",
 };
 
 const slidesContainerStyles = {
@@ -90,18 +52,20 @@ const ImageSlider = ({ slides, parentWidth }) => {
     }
     timerRef.current = setTimeout(() => {
       goToNext();
-    }, 2000);
+    }, 5000);
 
     return () => clearTimeout(timerRef.current);
   }, [goToNext]);
 
   return (
-    <div style={sliderStyles}>
+    
+    <div className="resturant__slider">
+        
       <div>
-        <div onClick={goToPrevious} style={leftArrowStyles}>
+        <div onClick={goToPrevious} className="left-arrow" >
           ❰
         </div>
-        <div onClick={goToNext} style={rightArrowStyles}>
+        <div onClick={goToNext} className="right-arrow">
           ❱
         </div>
       </div>
@@ -115,10 +79,10 @@ const ImageSlider = ({ slides, parentWidth }) => {
           ))}
         </div>
       </div>
-      <div style={dotsContainerStyles}>
+      <div className="dot-container">
         {slides.map((slide, slideIndex) => (
           <div
-            style={dotStyle}
+            className="dot"
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
           >

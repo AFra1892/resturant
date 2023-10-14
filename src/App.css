@@ -19,10 +19,9 @@ a{
 
 }
 .slider-container{
-  background-color: black;
   width: 500px;
   height: 280px;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 .gradient__bg {
   background:-moz-radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
