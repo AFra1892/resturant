@@ -99,40 +99,36 @@ export default function Menu(){
         <div className="resturant__menu section__padding">
             <div className="resturant__menu-categories">
                 <ul className="resturant__menu-categories_items">
-                        {/* <p><a id="pizza"  onClick={handle} >Pizza 🍕</a></p>
-                        <p><a id="pasta" onClick={handle}>Pasta 🍝</a></p>
-                        <p><a id="chicken" onClick={handle}>Chicken 🍗</a></p>
-                        <p><a id="burger" onClick={handle}>Burger 🍔</a></p>
-                        <p><a id="sandwich" onClick={handle}>Sandwich 🥪</a></p>  */}
+                        
                     <button 
                         onClick={()=>setFilter("pizza")}
                         className={`filter-btn ${filter === 'pizza' ? "active-btn" : "" }`}
                     >
-                        Pizza
+                        Pizza 🍕
                     </button>
                     <button 
                         onClick={()=>setFilter("pasta")}
                         className={`filter-btn ${filter === 'pasta' ? "active-btn" : "" }`}
                     >
-                        Pasta
+                        Pasta 🍝
                     </button>
                     <button 
                         onClick={()=>setFilter("chicken")}
                         className={`filter-btn ${filter === 'chicken' ? "active-btn" : "" }`}
                     >
-                        Chicken
+                        Chicken 🍗
                     </button>
                     <button 
                         onClick={()=>setFilter("burger")}
                         className={`filter-btn ${filter === 'burger' ? "active-btn" : "" }`}
                     >
-                        Burger
+                        Burger 🍔
                     </button>
                     <button 
                         onClick={()=>setFilter("sandwich")}
                         className={`filter-btn ${filter === 'sandwich' ? "active-btn" : "" }`}
                     >
-                        Sandwich
+                        Sandwich 🥪
                     </button>
                 </ul>
             </div>

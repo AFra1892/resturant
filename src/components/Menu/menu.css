@@ -16,11 +16,7 @@
     padding: 2rem;
     
 }
-.resturant__menu-categories_items p {
-    border: 1px solid #379237;
-    margin: 1rem;
-    padding: .5rem;
-}
+
 .resturant__menu-food h1{
     padding: 1rem;
 }
@@ -34,6 +30,7 @@ gap: 1rem;
     border: 1px solid #379237;
     margin: 1rem;
     padding: .5rem;
+    cursor: pointer;
 }
 .active-btn{
     background-color: #379237;
