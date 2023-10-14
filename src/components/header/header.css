@@ -4,6 +4,7 @@
     justify-content: space-between;
 }
 .pizzahub__header-content h1{
+    color:#fff;
     max-width: 500px;
     font-family: var(--font-family);
     font-weight: 800;
@@ -15,12 +16,13 @@
     color: #379237;
 }
 .pizzahub__header-content p{
-    max-width: 600px;
+    
+    max-width: 500px;
 font-family: var(--font-family);
     font-weight: 400;
     font-size: 20px;
     line-height: 28px;
-    color: var(--color-text);
+    color: #fff;
 
     margin-top: 1.5rem;
 }

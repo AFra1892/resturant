@@ -137,7 +137,6 @@ export default function Menu(){
                 </ul>
             </div>
             <div className="resturant__menu-food">
-                <h1>{currentCat}</h1>
                 <div className="resturant__menu-food_items">
                     {menuItems()}
                 </div>
