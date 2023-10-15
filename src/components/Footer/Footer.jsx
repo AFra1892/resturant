@@ -23,9 +23,9 @@ const Footer = () => {
         </div>
         <div className='resturant__footer-contacts'>
             <h4>Contact</h4>
-            <p>Tehran,Iran</p>
-            <p>example@gmail.com</p>
-            <p>phone number</p>
+            <p><i class='bx bxs-edit-location' ></i> Tehran,Iran</p>
+            <p><i class='bx bx-envelope'></i> example@gmail.com</p>
+            <p><i class='bx bx-phone' ></i> phone number</p>
         </div>
     </div>
   )

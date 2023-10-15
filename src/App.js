@@ -10,11 +10,11 @@ import first from './assets/1.png'
 import second from './assets/header-bg (2).jpg'
 function App() {
   const slides = [
-    { url: "image-1.jpg", title: "beach",},
-    { url: "image-2.jpg", title: "boat" },
-    { url: "image-3.jpg", title: "forest" },
-    { url: "image-4.jpg", title: "city" },
-    { url: "image-5.jpg", title: "italy" },
+    { url: "ig1.jpg", title: "beach",},
+    { url: "ig2.jpg", title: "boat" },
+    { url: "ig3.jpg", title: "forest" },
+    { url: "ig4.jpg", title: "city" },
+    { url: "ig5.jpg", title: "italy" },
   ];
 
   return (
@@ -24,9 +24,16 @@ function App() {
         <Header/>
       </div>
       <Menu/>
-      <div className='slider-container' >
-        {/* <h2>What our customers are saying</h2> */}
-        <Slider slides={slides} parentWidth={500} />
+      <div className='dn section__padding'>
+        <div className='slider-container_content'>
+          <h4><i class='bx bxl-instagram-alt bx-sm'></i> Instagram</h4>
+          <h2>Photo Gallery</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <button>View More</button>
+        </div>
+        <div className='slider-container' >
+          <Slider slides={slides} parentWidth={500} />
+        </div>
       </div>
       <Footer/>
     </div>

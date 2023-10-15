@@ -9,7 +9,7 @@ const Menu = ()=>(
     <p><a href='#wgpt3'>Food</a></p>
     <p><a href='#possibilities'>Services</a></p>
     <p><a href='features'>About us</a></p>
-    
+    <i class='bx bx-shopping-bag' ></i>
   </>
 )
 
