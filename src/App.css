@@ -19,6 +19,8 @@ a{
 
 }
 .dn{
+  background-color: #379237;
+  color: #fff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -31,8 +33,8 @@ a{
 .slider-container_content button
 {
     padding: 0.5rem 1rem;
-    color: #fff;
-    background-color: #379237;
+    color: #379237;
+    background-color: #fff;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 18px;
@@ -44,7 +46,7 @@ a{
 }
 .slider-container_content h2{
   margin: 1rem 0;
-  color:#379237;
+  color: #fff;
   max-width: 500px;
   font-family: var(--font-family);
   font-weight: 800;

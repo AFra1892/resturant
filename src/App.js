@@ -6,8 +6,9 @@ import Menu from './components/Menu/Menu';
 import Footer from './components/Footer/Footer';
 import React from 'react';
 import Slider from './components/Slider/Slider';
-import first from './assets/1.png'
-import second from './assets/header-bg (2).jpg'
+import Drink from './components/Drink/Drink';
+
+
 function App() {
   const slides = [
     { url: "ig1.jpg", title: "beach",},
@@ -16,7 +17,13 @@ function App() {
     { url: "ig4.jpg", title: "city" },
     { url: "ig5.jpg", title: "italy" },
   ];
-
+  const coldDrink = [
+    {name:"soda",price:"$2"},
+    {name:"soda",price:"$2"},
+    {name:"soda",price:"$2"},
+    {name:"soda",price:"$2"},
+    {name:"soda",price:"$2"}
+]
   return (
     <div className="App">
       <div className='header'>
@@ -35,6 +42,7 @@ function App() {
           <Slider slides={slides} parentWidth={500} />
         </div>
       </div>
+      <Drink coldDrink={coldDrink}/>
       <Footer/>
     </div>
   );
