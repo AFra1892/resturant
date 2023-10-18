@@ -1,8 +1,7 @@
 import './App.css';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
+import Menu from './pages/Menu';
 import Landing from './pages/Landing'
 
 function App() {
@@ -12,8 +11,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<Landing/>}/>
-        <Route path="/home" element={<Home />} />
-        <Route path="about" element={<About />} />
+        <Route path="/menu" element={<Menu />} />
       </Routes>
     </div>
   );

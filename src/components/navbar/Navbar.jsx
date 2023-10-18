@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 import {RiMenu3Line, RiCloseLine} from 'react-icons/ri'
 import './navbar.css'
-// import logo from '../../assets/logo.svg'
 
 const Menu = ()=>(
   <>
-    <p><a href='#menu'>Menu</a></p>
+    <p><a href='/'>Home</a></p>
+    <p><a href='/menu'>Menu</a></p>
     <p><a href='#drinks'>Drinks</a></p>
     <p><a href='#gallery'>Gallery</a></p>
     <p><a href='#contact'>Contact</a></p>
