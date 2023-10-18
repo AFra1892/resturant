@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {RiMenu3Line, RiCloseLine} from 'react-icons/ri'
 import './navbar.css'
 
-const Menu = ()=>(
+const NavList = ()=>(
   <>
     <p><a href='/'>Home</a></p>
     <p><a href='/menu'>Menu</a></p>
@@ -26,7 +26,7 @@ const [toggleMenu,setToggleMenu] = useState(false)
           <h1>Pizza Hub</h1>
         </div>
         <div className='gpt3__navbar-links_container'>
-          <Menu/>
+          <NavList/>
         </div>
       </div>
       <div className='gpt3__navbar-sign'>
@@ -41,7 +41,7 @@ const [toggleMenu,setToggleMenu] = useState(false)
         {toggleMenu && (
           <div className='gpt3__navbar-menu_container scale-up-center'>
             <div className='gpt3__navbar-menu_container-links'>
-              <Menu/>
+              <NavList/>
               <div className='gpt3__navbar-menu_container-links-sign'>
                 <p>sign in</p>
                 <button type='button'>sign up</button>

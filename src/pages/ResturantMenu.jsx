@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import Navbar from '../components/navbar/Navbar';
+import Menu from '../components/Menu/Menu';
 
-export default function Menu() {
+export default function ResturantMenu() {
   return (
     <>
       <Navbar/>
-      <h1>Menu page</h1>
+      <Menu/>
     </>
   );
 }

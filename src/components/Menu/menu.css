@@ -3,22 +3,39 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 100px;
+    
 }
 .resturant__menu-categories{
     display: flex;
-    
+border: 1px solid #379237;
+border-radius: 5px;    
 }
 .resturant__menu-categories_items{
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    padding: 2rem;
+    width: 275px;
     
 }
-
+.resturant__menu-categories_items button{
+    width: 100%;
+    height: 85px;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 30px;
+}
+.resturant__menu-food{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .resturant__menu-food h1{
     padding: 1rem;
+    margin-bottom: 30px;
+    font-size: 55px;
 }
 .resturant__menu-food_items{
     height: 500px;
@@ -29,7 +46,6 @@
 .filter-btn{
     background-color: transparent;
     border: 1px solid #379237;
-    margin: 1rem;
     padding: .5rem;
     cursor: pointer;
 }
