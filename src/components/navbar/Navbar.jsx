@@ -5,10 +5,10 @@ import './navbar.css'
 
 const Menu = ()=>(
   <>
-    <p><a href='#home'>Menu</a></p>
-    <p><a href='#wgpt3'>Food</a></p>
-    <p><a href='#possibilities'>Services</a></p>
-    <p><a href='features'>About us</a></p>
+    <p><a href='#menu'>Menu</a></p>
+    <p><a href='#drinks'>Drinks</a></p>
+    <p><a href='#gallery'>Gallery</a></p>
+    <p><a href='#contact'>Contact</a></p>
     <i class='bx bx-shopping-bag' ></i>
   </>
 )

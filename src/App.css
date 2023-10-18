@@ -20,6 +20,7 @@ a{
 }
 .dn{
   background-color: #379237;
+  height: 100vh;
   color: #fff;
   display: flex;
   flex-direction: row;
@@ -30,6 +31,7 @@ a{
   height: 480px;
   margin-right: 100px;
 }
+
 .slider-container_content button
 {
     padding: 0.5rem 1rem;
@@ -134,4 +136,12 @@ animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   .section__margin {
     margin: 4rem 2rem;
   }  
+  .dn{
+    
+  background-color: #379237;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
 }

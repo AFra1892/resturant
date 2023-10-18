@@ -49,7 +49,7 @@ const Drink = () => {
    
      
   return (
-    <div className='resturant__drink section__padding'>
+    <div id='drinks' className='resturant__drink section__padding'>
 
             <ColdDrinks/>
             <img className='resturant__drink-image' src='drink.jpg'/>

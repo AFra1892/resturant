@@ -27,7 +27,7 @@ export default function Menu(){
     const[sandwichImage,setSandwichImage] = React.useState([sandwich1,sandwich2,sandwich3])
     const[chickenImage,setChickenImage] = React.useState([chicken3,chicken4,chicken8])
 
-    const pizza = [ {name:"Peperoni Pizza" , price:"8.99$"},{name:"PineApple Pizza", price:"7.99$"},{name:"Chicken Pizza",price:"9.99$"}]
+    const pizza = [ {name:"Peperoni Pizza" , price:"8.99"},{name:"PineApple Pizza", price:"7.99"},{name:"Chicken Pizza",price:"9.99"}]
     const pasta = [{name:"alferedo" , price:"12.99"},{name:"begoenii" , price:"10.99"},{name:"bonapetito" , price:"15.99"}]
     const chicken = [{name:"6 peace strips" , price:"8.99"},{name:"8 peace strips" , price:"10.99"},{name:"10 peace strips" , price:"12.99"}]
     const burger = [{name:"cheeze burger" , price:"12.99" },{name:"chicken burger" , price:"10.99", img:{chickenBurger}},{name:"mashroom burger" , price:"15.99" , img:{mashromBurger}}]
@@ -96,7 +96,7 @@ export default function Menu(){
     }
     
     return(
-        <div className="resturant__menu section__padding">
+        <div id="menu" className="resturant__menu section__padding">
             <div className="resturant__menu-categories">
                 <ul className="resturant__menu-categories_items">
                         

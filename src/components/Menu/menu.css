@@ -21,9 +21,10 @@
     padding: 1rem;
 }
 .resturant__menu-food_items{
+    height: 500px;
     display: flex;
     flex-direction: row;
-gap: 1rem;
+    gap: 1rem;
 }
 .filter-btn{
     background-color: transparent;
@@ -70,11 +71,13 @@ gap: 1rem;
         display: flex;
         flex-direction: column;
         padding: 2rem;
+        height: 100vh;
     }
     .resturant__menu-food_items{
         display: flex;
         flex-direction: column;
         padding: 1rem;
+        height: 500px;
     }
     .resturant__menu-categories_items{
         display: flex;
