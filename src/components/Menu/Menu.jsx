@@ -114,7 +114,7 @@ export default function Menu(){
                     onClick={()=>setFilter("favorite")}
                     className={`filter-btn ${filter === 'favorite' ? "active-btn" : "" }`}
                 >
-                    Favorite
+                    Favorite ⭐
                 </button>
                 <ul className="resturant__menu-categories_items">
                         

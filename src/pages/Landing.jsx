@@ -5,6 +5,7 @@ import Footer from '../components/Footer/Footer';
 import React from 'react';
 import Slider from '../components/Slider/Slider';
 import Drink from '../components/Drink/Drink';
+import BestDeal from '../components/bestDeal/BestDeal';
 
 
 function Landing() {
@@ -29,7 +30,7 @@ function Landing() {
         <Header/>
       </div>
       
-      
+      <BestDeal/>
       <div id='gallery' className='dn section__padding'>
         <div className='slider-container_content'>
           <h4><i class='bx bxl-instagram-alt bx-sm'></i> Instagram</h4>

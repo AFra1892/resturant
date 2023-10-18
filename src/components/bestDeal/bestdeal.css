@@ -1,0 +1,61 @@
+.resturant__bestDeal{
+    display: flex;
+    flex-direction: row;
+}
+.resturant__bestDeal-leftCol{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.resturant__bestDeal-rightCol{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.resturant__bestDeal-rightCol img,
+.resturant__bestDeal-leftCol img{
+    display: flex;
+    width: 500px;
+    height: 600px;
+    margin-bottom: 3rem;
+    border-radius: 12px;background: rgba(255, 255, 255, 1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.7px);
+    -webkit-backdrop-filter: blur(3.7px);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+}
+.bestdeal-container{
+    text-align: left;
+    margin-bottom: 3rem;
+}
+.bestdeal-paragraf{
+    margin: 1rem 0;
+    max-width: 500px;
+}
+.resturant__bestDeal_heading{
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 40px;
+    color: #379237;
+}
+.bestdeal-container button
+{
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background-color: #379237;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
