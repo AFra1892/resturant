@@ -8,16 +8,28 @@
 }
 .resturant__menu-categories{
     display: flex;
-border: 1px solid #379237;
-border-radius: 5px;    
+    flex-direction: column; 
 }
+
+#favorite-category{
+    width: 100%;
+    height: 85px;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 30px;
+    border: 1px solid #379237;
+    border-radius: 5px;
+    
+} 
 .resturant__menu-categories_items{
     display: flex;
     flex-direction: column;
     text-align: center;
     justify-content: center;
     width: 275px;
-    
+    margin-top: 30px;
+    border: 1px solid #379237;
+    border-radius: 5px;
 }
 .resturant__menu-categories_items button{
     width: 100%;

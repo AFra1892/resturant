@@ -32,12 +32,16 @@ export default function Menu(){
     const chicken = [{name:"6 peace strips" , price:"8.99"},{name:"8 peace strips" , price:"10.99"},{name:"10 peace strips" , price:"12.99"}]
     const burger = [{name:"cheeze burger" , price:"12.99" },{name:"chicken burger" , price:"10.99", img:{chickenBurger}},{name:"mashroom burger" , price:"15.99" , img:{mashromBurger}}]
     const sandwich = [{name:"hot dog" , price:"12.99"},{name:"meatloaf" , price:"10.99"},{name:"chicken sandwich" , price:"15.99"}]
+    const favorite = [{name:"hot dog" , price:"12.99"},{name:"meatloaf" , price:"10.99"},{name:"chicken sandwich" , price:"15.99"}]
 
     
     const [filter,setFilter] = React.useState('pizza')
     const [products,setProducts] = React.useState(pizza)
 
     React.useEffect(()=>{
+        if(filter === 'favorite'){
+            setProducts(favorite)
+        }
         if(filter === 'pizza'){
             setProducts(pizza)
         }
@@ -93,11 +97,25 @@ export default function Menu(){
             })
             return elements
         }
+        else if(filter === "favorite"){
+            products.map((item,index)=>{
+                elements.push(<MenuCard name={item.name} price={item.price} image={sandwichImage[index]}/>)
+
+            })
+            return elements
+        }
     }
     
     return(
         <div id="menu" className="resturant__menu section__padding">
             <div className="resturant__menu-categories">
+                <button 
+                id="favorite-category"
+                    onClick={()=>setFilter("favorite")}
+                    className={`filter-btn ${filter === 'favorite' ? "active-btn" : "" }`}
+                >
+                    Favorite
+                </button>
                 <ul className="resturant__menu-categories_items">
                         
                     <button 
