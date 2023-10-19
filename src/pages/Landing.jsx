@@ -42,7 +42,7 @@ function Landing() {
           <Slider slides={slides} parentWidth={500} />
         </div>
       </div>
-      <Drink coldDrink={coldDrink}/>
+      {/* <Drink coldDrink={coldDrink}/> */}
       <Footer/>
     </div>
   );
