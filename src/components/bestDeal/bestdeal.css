@@ -59,14 +59,49 @@
     outline: 0;
     cursor: pointer;
 }
-
+@media screen and (max-width: 1250px) {
+    .resturant__bestDeal{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+    .resturant__bestDeal-rightCol img,
+    .resturant__bestDeal-leftCol img{
+        display: flex;
+        width: 400px;
+        height:500px;
+       
+    }
+}
 /* tablets devices */
 @media screen and (max-width: 1050px) {
-   
+    .resturant__bestDeal{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+    .resturant__bestDeal-rightCol img,
+    .resturant__bestDeal-leftCol img{
+        display: flex;
+        width: 350px;
+        height:350px;
+       
+    }
 }
 
 @media screen and (max-width: 700px) {
-    
+    .resturant__bestDeal{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+    .resturant__bestDeal-rightCol img,
+    .resturant__bestDeal-leftCol img{
+        display: flex;
+        width: 250px;
+        height:250px;
+       
+    }
 }
 /* mobile devices */
 @media screen and (max-width: 550px) {
