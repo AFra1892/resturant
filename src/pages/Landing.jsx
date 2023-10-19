@@ -39,8 +39,8 @@ function Landing() {
           <div className="gpt3__header-content__people">
             <img src={people} />
             <p>1,600 people requested access a visit in last 24 hours</p>
+            <button>View More</button>
           </div>
-          <button>View More</button>
         </div>
         <div className='slider-container' >
           <Slider slides={slides} parentWidth={500} />
