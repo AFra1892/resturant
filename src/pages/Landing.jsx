@@ -7,8 +7,10 @@ import Slider from '../components/Slider/Slider';
 import Drink from '../components/Drink/Drink';
 import BestDeal from '../components/bestDeal/BestDeal';
 import people from '../assets/people.png'
+import data from '../data'
 
 function Landing() {
+  const [menuData,setMenuData] = React.useState(data)
   const slides = [
     { url: "ig1.jpg", title: "beach",},
     { url: "ig2.jpg", title: "boat" },
@@ -29,7 +31,10 @@ function Landing() {
         <Navbar/>
         <Header/>
       </div>
-      
+      {menuData.map((item)=>{
+
+         return <img src={item.img}/>
+      })}
       <BestDeal/>
       <div id='gallery' className='dn section__padding'>
         <div className='slider-container_content'>

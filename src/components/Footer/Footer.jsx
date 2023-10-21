@@ -16,8 +16,8 @@ const Footer = () => {
         </div>
         <div className='resturant__footer-quicklinks'>
             <h4>Quick Links</h4>
-            <p><a href='#menu'>Menu</a></p>
-            <p><a href='#drinks'>Drinks</a></p>
+            <p><a href='/'>Home</a></p>
+            <p><a href='/menu'>Menu</a></p>
             <p><a href='#gallery'>Gallery</a></p>
             <p><a href='#contact'>Contact</a></p>
         </div>
