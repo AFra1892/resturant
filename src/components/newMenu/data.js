@@ -1,0 +1,106 @@
+const data = [
+    ["burger","sandwitch","drink","chicken"],
+    {
+        id:1,
+        name:"classicBurger",
+        price:"12.99$",
+        cal:250,
+        img:'./images/classic.jpg',
+        category:"burger"
+
+    },
+    {
+        id:2,
+        name:"cheeseBurger",
+        price:"15.99$",
+        cal:300,
+        img:'./images/cheeseburger.jpg',
+        category:"burger"
+
+    },
+    {
+        id:3,
+        name:"doubleCheeseBurger",
+        price:"18.99$",
+        cal:450,
+        img:'./images/double-cheeseburger.jpg',
+        category:"burger"
+
+    },
+    {
+        id:4,
+        name:"Chicken",
+        price:"10.99$",
+        cal:400,
+        img:'./images/chicken.jpg',
+        category:"sandwich"
+
+    },
+    {
+        id:5,
+        name:"Fish",
+        price:"13.99$",
+        cal:390,
+        img:'./images/fish.jpg',
+        category:"sandwich"
+
+    },
+    {
+        id:6,
+        name:"Crispy Chicken",
+        price:"18.99$",
+        cal:470,
+        img:'./images/crispy-chicken.jpg',
+        category:"sandwich"
+
+    },
+    {
+        id:7,
+        name:"Coca-cola",
+        price:"4.99$",
+        cal:150,
+        img:'./images/coke.jpg',
+        category:"drink"
+
+    },
+    {
+        id:8,
+        name:"Sprite",
+        price:"3.99$",
+        cal:140,
+        img:'./images/sprite.jpg',
+        category:"drink"
+
+    },
+    {
+        id:9,
+        name:"Fanta",
+        price:"4.99$",
+        cal:470,
+        img:'./images/fanta.jpg',
+        category:"drink"
+
+    },
+    {
+        id:10,
+        name:"Chicken Nuggets",
+        price:"9.99$",
+        cal:470,
+        img:'./images/nuggets.jpg',
+        category:"chicken"
+
+    },
+    {
+        id:11,
+        name:"10 Piece Nuggets",
+        price:"7.99$",
+        cal:470,
+        img:'./images/10nuggets.jpg',
+        category:"chicken"
+
+    }
+    
+    
+
+]
+export default data

@@ -1,8 +1,5 @@
 import React from "react";
 import './menucard.css'
-import cheezeBurger from '../../assets/burger/cheeze-burger.png'
-import chickenBurger from '../../assets/burger/chicken-burger.png'
-import mashromBurger from '../../assets/burger/mashrom-burger.png'
 
 
 export default function MenuCard(props){
