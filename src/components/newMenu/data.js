@@ -1,6 +1,6 @@
 const data = [
     ["burger","sandwitch","drink","chicken"],
-    {
+    [{
         id:1,
         name:"classicBurger",
         price:"12.99$",
@@ -98,7 +98,7 @@ const data = [
         img:'./images/10nuggets.jpg',
         category:"chicken"
 
-    }
+    }]
     
     
 
