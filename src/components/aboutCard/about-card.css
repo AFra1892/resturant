@@ -31,3 +31,35 @@
     max-width: 500px;
     margin-bottom:1.75rem;
 }
+@media screen and (max-width: 1300px) {
+    .resturant__aboutCard img{
+        height: 380px;
+        width: 470px;
+        margin-bottom:1.75rem;
+    
+    }
+}
+@media screen and (max-width: 1100px) {
+    .resturant__aboutCard img{
+        height: 280px;
+        width: 370px;
+        margin-bottom:1.75rem;
+    
+    }
+}
+@media screen and (max-width: 840px) {
+    .resturant__aboutCard img{
+        height: 380px;
+    width: 570px;
+    margin-bottom:1.75rem;
+    
+    }
+}
+@media screen and (max-width: 610px) {
+    .resturant__aboutCard img{
+        height: 280px;
+        width: 370px;
+        margin-bottom:1.75rem;
+    
+    }
+}

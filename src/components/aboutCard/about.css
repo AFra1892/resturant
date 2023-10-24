@@ -1,0 +1,42 @@
+.restirant__about{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.restirant__about h2{
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 56px;
+    margin-bottom:50px;
+}
+.resturant__about-cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+}
+@media screen and (max-width: 1050px) {
+    .restirant__about{
+        padding: 3rem;
+    }
+    .resturant__about-cards{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:50px;
+    }
+}
+@media screen and (max-width: 840px) {
+   
+    .resturant__about-cards{
+        display:grid;
+        grid-template-columns:1fr ;
+        gap:50px;
+    }
+}
+@media screen and (max-width: 610px) {
+    .resturant__about-cards{
+        display:grid;
+        grid-template-columns:1fr;
+    }
+}
