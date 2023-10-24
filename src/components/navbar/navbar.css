@@ -5,6 +5,7 @@
     color: #fff;
     padding: 2rem 6rem;
     background-color: #379237;
+    
 }
 
 .gpt3__navbar-links{
@@ -15,6 +16,7 @@
 }
 
 .gpt3__navbar-links_logo{
+   
     margin-right: 2rem;
     color: #fff;
 }

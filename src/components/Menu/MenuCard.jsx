@@ -7,7 +7,7 @@ export default function MenuCard(props){
     return(
         <div className="resturant__menucard">
             <div className="resturant__menucard-image">
-                <img src={props.image}/>
+                <img src={props.image} alt="food"/>
                 
             </div>
             <div  className="resturant__menucard-card">

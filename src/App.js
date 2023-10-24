@@ -3,7 +3,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ResturantMenu from './pages/ResturantMenu';
 import Landing from './pages/Landing'
-import About from './pages/About';
+import AboutPage from './pages/AboutPage';
 function App() {
 ;
 
@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Landing/>}/>
         <Route path="/menu" element={<ResturantMenu />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </div>
   );
