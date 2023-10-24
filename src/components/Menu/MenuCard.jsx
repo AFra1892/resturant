@@ -13,7 +13,7 @@ export default function MenuCard(props){
             <div  className="resturant__menucard-card">
                     <h3>{props.name}</h3>
                     <p>Ingridients</p>
-                    <p>{props.price} $</p>
+                    <p>{props.price}</p>
                     <button>Order Now</button> 
             </div>
         </div>

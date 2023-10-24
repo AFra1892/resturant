@@ -63,7 +63,7 @@ export default function Menu(){
         else if(filter === "favorite"){
             products.map((item,index)=>{
                 elements.push(<MenuCard name={item.name} price={item.price} image={item.img}/>)
-
+                
             })
             return elements
         }
@@ -80,13 +80,13 @@ export default function Menu(){
                     Favorite ⭐ 
                 </button> 
                 <ul className="resturant__menu-categories_items">
-                        
-                    <button 
-                        onClick={()=>setFilter("drink")}
-                        className={`filter-btn ${filter === 'pizza' ? "active-btn" : "" }`}
+                <button 
+                        onClick={()=>setFilter("burger")}
+                        className={`filter-btn ${filter === 'burger' ? "active-btn" : "" }`}
                     >
-                        Drink
-                    </button>
+                        Burger 🍔
+                    </button>   
+                    
                     
                     <button 
                         onClick={()=>setFilter("chicken")}
@@ -94,17 +94,18 @@ export default function Menu(){
                     >
                         Chicken 🍗
                     </button>
-                    <button 
-                        onClick={()=>setFilter("burger")}
-                        className={`filter-btn ${filter === 'burger' ? "active-btn" : "" }`}
-                    >
-                        Burger 🍔
-                    </button>
+                   
                     <button 
                         onClick={()=>setFilter("sandwich")}
                         className={`filter-btn ${filter === 'sandwich' ? "active-btn" : "" }`}
                     >
                         Sandwich 🥪
+                    </button>
+                    <button 
+                        onClick={()=>setFilter("drink")}
+                        className={`filter-btn ${filter === 'pizza' ? "active-btn" : "" }`}
+                    >
+                        Drink 🍹
                     </button>
                 </ul>
             </div>

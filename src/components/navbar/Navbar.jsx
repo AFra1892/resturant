@@ -6,7 +6,7 @@ const NavList = ()=>(
   <>
     <p><a href='/'>Home</a></p>
     <p><a href='/menu'>Menu</a></p>
-    <p><a href='/newMenu'>Drinks</a></p>
+    <p><a href='/about'>About</a></p>
     <p><a href='#gallery'>Gallery</a></p>
     <p><a href='#contact'>Contact</a></p>
     <i class='bx bx-shopping-bag' ></i>
