@@ -14,7 +14,7 @@ export default function MenuCard(props){
                     <h3>{props.name}</h3>
                     <p>Ingridients</p>
                     <p>{props.price}</p>
-                    <button>Order Now</button> 
+                    <button><a href="/menu/chicken">Order Now</a></button> 
             </div>
         </div>
     )
