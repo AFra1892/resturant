@@ -1,5 +1,5 @@
-const express = require('express')
-const { Food } =require('../models/foodModel.js');
+import express from 'express'
+import { Food } from'../models/foodModel.js';
 
 const router = express.Router();
 
@@ -82,4 +82,4 @@ router.delete('/:id', async (request, response) => {
   }
 });
 
-module.exports =  router;
+export default router;
