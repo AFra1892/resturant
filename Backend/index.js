@@ -1,10 +1,11 @@
 import express from'express';
-import {mongoDBURL} from './config.js';
-import mongoose from 'mongoose'
 
+import mongoose from 'mongoose'
+import dotenv from 'dotenv'
 import foodsRoute from './routes/foodsRoute.js';
 import cors from 'cors';
 const app = express();
+dotenv.config()
 
 // Middleware for parsing request body
 app.use(express.json());
@@ -22,7 +23,7 @@ app.get('/', (request, response) => {
 app.use('/foods', foodsRoute);
 
 mongoose
-  .connect(mongoDBURL)
+  .connect(process.env.mongoDBURL)
   .then(() => {
     console.log('App connected to database');
     app.listen(5555, () => {
