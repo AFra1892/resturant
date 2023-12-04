@@ -9,6 +9,7 @@ import ManageMenu from './pages/ManageMenu';
 import CreateFood from './pages/CreateFood';
 import DeleteFood from './pages/DeleteFood'
 import Menu from './pages/menu/Menu'
+import SpecialPage from './pages/menu/SpecialPage'
 function App() {
 ;
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/test/delete/:id" element={<DeleteFood/>} />
         {/* menu based on database */}
         <Route path="/newMenu" element={<Menu/>} />
+        <Route path="/newMenu/:id" element={<SpecialPage/>} />
 
       </Routes>
     </div>
