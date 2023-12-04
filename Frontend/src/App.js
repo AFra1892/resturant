@@ -26,7 +26,7 @@ function App() {
         <Route path="/test/delete/:id" element={<DeleteFood/>} />
         {/* menu based on database */}
         <Route path="/newMenu" element={<Menu/>} />
-        <Route path="/newMenu/:id" element={<SpecialPage/>} />
+        <Route path="/newMenu/:id" element={<SpecialPage />} />
 
       </Routes>
     </div>
