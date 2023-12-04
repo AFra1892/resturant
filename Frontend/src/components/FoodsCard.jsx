@@ -4,16 +4,16 @@ import { BiUserCircle } from 'react-icons/bi';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { BsInfoCircle } from 'react-icons/bs';
 import { MdOutlineDelete } from 'react-icons/md';
-import BookSingleCard from '../components/foodsinglecard/FoodSingleCard';
+import FoodSingleCard from '../components/foodsinglecard/FoodSingleCard';
 
-const BooksCard = ({ books }) => {
+const FoodsCard = ({ foods }) => {
   return (
     <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-      {books.map((item) => (
-        <BookSingleCard key={item._id} book={item} />
+      {foods.map((item) => (
+        <FoodSingleCard key={item._id} food={item} />
       ))}
     </div>
   );
 };
 
-export default BooksCard;
+export default FoodsCard;

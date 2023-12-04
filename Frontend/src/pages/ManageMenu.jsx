@@ -4,10 +4,10 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import { MdOutlineAddBox } from 'react-icons/md';
-import BooksCard from '../components/FoodsCard';
+import FoodsCard from '../components/FoodsCard';
 
 const ManageMenu = () => {
-  const [books, setBooks] = useState([]);
+  const [foods, setFoods] = useState([]);
 
   
 
@@ -16,7 +16,7 @@ const ManageMenu = () => {
     axios
       .get('http://localhost:5555/foods')
       .then((response) => {
-        setBooks(response.data.data);
+        setFoods(response.data.data);
         
       })
       .catch((error) => {
@@ -33,7 +33,7 @@ const ManageMenu = () => {
           <MdOutlineAddBox className='text-sky-800 text-4xl' />
         </Link>
       </div>
-        <BooksCard books={books} />
+        <FoodsCard foods={foods} />
     </div>
   );
 };

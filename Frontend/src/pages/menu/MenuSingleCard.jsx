@@ -4,7 +4,7 @@ import { MdOutlineDelete } from 'react-icons/md';
 
 
 
-const FoodSingleCard = ({ food }) => {
+const MenuSingleCard = ({ food }) => {
   
 
   return (
@@ -22,4 +22,4 @@ const FoodSingleCard = ({ food }) => {
   );
 };
 
-export default FoodSingleCard;
+export default MenuSingleCard;
