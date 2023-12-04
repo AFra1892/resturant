@@ -1,9 +1,5 @@
+import { BsInfoCircle } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-
-import { MdOutlineDelete } from 'react-icons/md';
-
-
-
 const MenuSingleCard = ({ food }) => {
   
 
@@ -14,7 +10,9 @@ const MenuSingleCard = ({ food }) => {
         <h2 className='my-1'>{food.price}</h2>
         <h2 className='my-1'>{food.category}</h2>
         <h2 className='my-1'>{food.cal}</h2>
-        <a href={`/newMenu/${food._id}`}>Special Page</a>
+        <Link to={`/newMenu/${food._id}`}>
+            <BsInfoCircle className='text-2xl text-green-800' />
+        </Link>
         
     </div>
   );

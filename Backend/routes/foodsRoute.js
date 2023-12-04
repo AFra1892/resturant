@@ -55,14 +55,14 @@ router.get('/:id', async (request, response) => {
   try {
     const { id } = request.params;
 
-    const food = await Food.findById(id);
-
+    const book = await Food.findById(id);
     return response.status(200).json(book);
   } catch (error) {
     console.log(error.message);
     response.status(500).send({ message: error.message });
   }
 });
+
 
 // Route for Delete a book
 router.delete('/:id', async (request, response) => {
