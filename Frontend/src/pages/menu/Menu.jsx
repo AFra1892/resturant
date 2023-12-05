@@ -2,7 +2,6 @@ import {useState,useEffect} from 'react'
 import axios from 'axios'
 import MenuCard from './MenuCard'
 import Navbar from '../../components/navbar/Navbar'
-
 const Menu = () => {
 
     const [menu,setMenu] = useState([])

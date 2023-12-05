@@ -1,8 +1,7 @@
 import { BsInfoCircle } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 const MenuSingleCard = ({ food }) => {
-  
-
+    
   return (
     <div className='border-2 border-gray-500 rounded-lg px-4 py-2 m-4 relative hover:shadow-xl'>
         <img src={food.imgUrl} alt='classicburger'/>
