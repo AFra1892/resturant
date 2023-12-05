@@ -40,18 +40,13 @@ const Menu = () => {
                     
                     
                     <button 
-                        onClick={()=>setCat("chicken")}
-                        className={`filter-btn ${cat === 'chicken' ? "active-btn" : "" }`}
+                        onClick={()=>setCat("nugget")}
+                        className={`filter-btn ${cat === 'nugget' ? "active-btn" : "" }`}
                     >
                         Chicken 🍗
                     </button>
                    
-                    <button 
-                        onClick={()=>setCat("sandwich")}
-                        className={`filter-btn ${cat === 'sandwich' ? "active-btn" : "" }`}
-                    >
-                        Sandwich 🥪
-                    </button>
+                   
                     <button 
                         onClick={()=>setCat("drink")}
                         className={`filter-btn ${cat === 'pizza' ? "active-btn" : "" }`}
