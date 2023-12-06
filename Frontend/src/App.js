@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import {useState} from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing'
 import AboutPage from './pages/AboutPage';
@@ -10,8 +10,8 @@ import DeleteFood from './pages/DeleteFood'
 import Menu from './pages/menu/Menu'
 import SpecialPage from './pages/menu/SpecialPage'
 import SignUp from './pages/auth/SignUp';
+import Login from './pages/auth/Login';
 function App() {
-;
 
   return (
     <div className="App">
@@ -28,6 +28,7 @@ function App() {
         <Route path="/newMenu/:id" element={<SpecialPage />} />
         authorization pages
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<Login />} />
 
       </Routes>
     </div>
