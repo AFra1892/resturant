@@ -9,7 +9,6 @@ const NavList = ()=>(
     <p><a href='/about'>About</a></p>
     <p><a href='#gallery'>Gallery</a></p>
     <p><a href='#contact'>Contact</a></p>
-    <p><a href='/signup'>Sign Up</a></p>
     <i class='bx bx-shopping-bag' ></i>
   </>
 )

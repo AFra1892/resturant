@@ -1,7 +1,10 @@
 import express from 'express'
 import { Food } from'../models/foodModel.js';
-
+import {User} from '../models/userModel.js'
 const router = express.Router();
+//Route for create a new user
+
+
 
 // Route for Save a new Book
 router.post('/', async (request, response) => {

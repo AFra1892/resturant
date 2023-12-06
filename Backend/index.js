@@ -3,6 +3,7 @@ import express from'express';
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import foodsRoute from './routes/foodsRoute.js';
+import usersRoute from './routes/users.Route.js'
 import cors from 'cors';
 const app = express();
 dotenv.config()
@@ -21,6 +22,7 @@ app.get('/', (request, response) => {
 });
 
 app.use('/foods', foodsRoute);
+app.use('/users', usersRoute);
 
 mongoose
   .connect(process.env.mongoDBURL)
