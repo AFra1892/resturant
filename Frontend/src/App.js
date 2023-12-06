@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import ResturantMenu from './pages/ResturantMenu';
 import Landing from './pages/Landing'
 import AboutPage from './pages/AboutPage';
 import ItemDetail from './components/ItemDetail/ItemDetail';
@@ -17,7 +16,6 @@ function App() {
     <div className="App">
       <Routes>
         <Route path='/' element={<Landing/>}/>
-        <Route path="/menu" element={<ResturantMenu />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/menu/chicken" element={<ItemDetail />} />
         {/* control panel */}
@@ -25,7 +23,7 @@ function App() {
         <Route path="/test/create" element={<CreateFood/>} />
         <Route path="/test/delete/:id" element={<DeleteFood/>} />
         {/* menu based on database */}
-        <Route path="/newMenu" element={<Menu/>} />
+        <Route path="/menu" element={<Menu/>} />
         <Route path="/newMenu/:id" element={<SpecialPage />} />
 
       </Routes>
