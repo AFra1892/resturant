@@ -9,6 +9,7 @@ import CreateFood from './pages/CreateFood';
 import DeleteFood from './pages/DeleteFood'
 import Menu from './pages/menu/Menu'
 import SpecialPage from './pages/menu/SpecialPage'
+import SignUp from './pages/auth/SignUp';
 function App() {
 ;
 
@@ -25,6 +26,8 @@ function App() {
         {/* menu based on database */}
         <Route path="/menu" element={<Menu/>} />
         <Route path="/newMenu/:id" element={<SpecialPage />} />
+        authorization pages
+        <Route path="/signup" element={<SignUp />} />
 
       </Routes>
     </div>
