@@ -5,6 +5,8 @@ import dotenv from 'dotenv'
 import foodsRoute from './routes/foodsRoute.js';
 import usersRoute from './routes/users.Route.js'
 import cors from 'cors';
+
+
 const app = express();
 dotenv.config()
 
@@ -17,9 +19,10 @@ app.use(cors());
 
 
 app.get('/', (request, response) => {
-  
   return response.status(234).send('Welcome To MERN Stack Tutorial');
 });
+
+
 
 app.use('/foods', foodsRoute);
 app.use('/users', usersRoute);
