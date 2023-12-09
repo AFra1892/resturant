@@ -5,7 +5,9 @@ import dotenv from 'dotenv'
 import foodsRoute from './routes/foodsRoute.js';
 import usersRoute from './routes/users.Route.js'
 import cors from 'cors';
+import {User} from './models/userModel.js'
 
+import jwt from 'jsonwebtoken'
 
 const app = express();
 dotenv.config()
@@ -23,6 +25,39 @@ app.get('/', (request, response) => {
 });
 
 
+
+app.post('/api/login',async(req,res)=>{
+  const user = User.findOne({
+    email:req.body.useremail,
+  })
+  //  console.log(req.body); //inja dastresi darim be data vorodi gtavasot karbar (input ha)
+  if(!user){
+    
+    return {status:'error',error:'invalid login'}
+  }
+  const token = jwt.sign({
+    name:user.username,
+    email:user.useremail,
+  },process.env.JWT_SECRET)
+
+  return res.json({status:'ok',user:token})
+  
+})
+
+app.get('/api/personal', async(req,res)=>{
+  const token = req.headers['x-access-token']
+
+  try {
+    const decoded = jwt.verify(token,process.env.JWT_SECRET)
+    const email = decoded.email
+    const user = await User.findOne({email:email})
+    // console.log(user);
+    return res.json({status:'ok',data:user})
+  } catch (error) {
+    console.log(error);
+    res.json({status:'error',error:'invalid token'})
+  }
+})
 
 app.use('/foods', foodsRoute);
 app.use('/users', usersRoute);

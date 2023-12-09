@@ -35,11 +35,9 @@ const SignUp = () => {
       };
 
   return (
-    <div className='flex h-screen bg-green-300'>
-        <div className='flex'>
-            <img src={imagee} alt='pic'/>
-        </div>
-        <div className=' w-2/6 ml-20 mt-20'>
+    <div className='flex h-screen '>
+        <div className='w-3/6 bg-green-300'></div>
+        <div className=' w-3/6 px-20 pt-20'>
             <h1 className='text-6xl'> Welcome !</h1>
             <h3 className='text-green-700 py-4 '>Give us some information to get better exprience</h3>
             <div className=' flex flex-col gap-y-6'>
