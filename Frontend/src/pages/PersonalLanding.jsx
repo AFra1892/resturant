@@ -1,67 +1,40 @@
-import {useState,useEffect} from 'react'
-import { useNavigate } from 'react-router-dom';
-import { IoMdExit } from "react-icons/io";
+import React, {useState, useEffect } from 'react'
 import jwt from 'jsonwebtoken'
-import Navbar from '../components/navbar/Navbar';
+import Navbar from '../components/navbar/Navbar'
+import { IoMdExit } from "react-icons/io";
+import { useNavigate } from 'react-router-dom';
+const DashTest = () => {
+    const [logedInUser,setLogedInUser] = useState({})
+    const navigate = useNavigate();
+    useEffect(()=>{
+        const token = localStorage.getItem('token')
+        const t = token.split(' ')[1]
+        const decoded = jwt.verify(t,'myfirstprojectworkingwithjwt10801')
+        setLogedInUser(decoded)
+        // console.log(decoded);
 
-const PersonalLanding = () => {
-
-  let number = 0
-  const navigate = useNavigate();
-  const [email,setEmail] = useState('')
-  const [name, setName] = useState('')
-  const [img, setImg] = useState('')
-	// const [tempQuote, setTempQuote] = useState('')
-
-	
-	useEffect(() => {
-		const token = localStorage.getItem('token')
-		if (token) {
-			const user = jwt.decode(token)
-			console.log(user);
-			if (!user) {
-				localStorage.removeItem('token')
-				navigate('/login')
-			} else {
-				populateQuote()
-			}
-		}
-	}, [])
-
-
-	async function populateQuote() {
-	  
-		  const req = await fetch('http://localhost:5555/api/personal', {
-			  headers: {
-				  'x-access-token': localStorage.getItem('token'),
-			  },
-		  })
-  
-		  const data = await req.json()
-		  if (data.status === 'ok') {
-			  setName(data.user.username)
-			  setEmail(data.user.useremail)
-			  setImg(data.user.usercustomimg)
-		  } else {
-			  alert(data.error)
-		  }
-	  }
-	
-	function clickHandeler(){
+    },[])
+    const styles = {
+        backgroundImage: `url(${logedInUser.img})`,
+        backgroundSize: 'cover'
+    }
+    function clickHandeler(){
 		alert('token was deleted')
 		localStorage.removeItem('token')
-		number = number+1
+		
 		navigate('/')
 	}
   return (
     <>
-    <Navbar/>
-	<IoMdExit onClick={clickHandeler} />
-    <div>Hello {name}  Welcome Back to PizzaHub</div>
-    <div>you have loged in with your {email}</div>
-	<img src={img} alt='landing'/>
+    <div className='h-screen bg-red-400' style={styles}>
+        <Navbar/>
+        <IoMdExit onClick={clickHandeler} />
+        {logedInUser.name}
+    
+    </div>
+    
     </>
   )
 }
 
-export default PersonalLanding
+export default DashTest
