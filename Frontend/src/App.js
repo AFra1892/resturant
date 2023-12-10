@@ -11,7 +11,8 @@ import Menu from './pages/menu/Menu'
 import SpecialPage from './pages/menu/SpecialPage'
 import SignUp from './pages/auth/SignUp';
 import Login from './pages/auth/Login';
-import PersonalLanding from './pages/PersonalLanding'
+// import PersonalLanding from './pages/PersonalLanding'
+import DashTest from './pages/DashTest';
 function App() {
 
   return (
@@ -30,7 +31,7 @@ function App() {
         authorization pages
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<Login />} />
-        <Route path="/dashboard" element={<PersonalLanding/>} />
+        <Route path="/dashboard" element={<DashTest/>} />
 
       </Routes>
     </div>

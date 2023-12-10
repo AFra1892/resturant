@@ -1,5 +1,5 @@
 import {useState} from 'react'
-
+import jwt from 'jsonwebtoken'
 const Login = () => {
   const [useremail,setUserEmail] = useState('')
   const [userpass,setUserPass] = useState('')
@@ -12,10 +12,11 @@ const Login = () => {
       body:JSON.stringify({useremail,userpass}), //inaro mifrestim backend
 
     })
-    const data = await response.json()
-
-    if(data.user){
-      localStorage.setItem('token',data.user)
+    const data = await response.json() // json nakoni password ro nemifahme
+    console.log(`this what i fetched ${data}`);
+    
+    if(data.token){
+      localStorage.setItem('token',data.token)
       alert('login successful')
       window.location.href = '/dashboard'
     }else{

@@ -27,10 +27,9 @@ app.get('/', (request, response) => {
 
 
 app.post('/api/login',async(req,res)=>{
-  const user = User.findOne({
-    email:req.body.useremail,
-  })
-  //  console.log(req.body); //inja dastresi darim be data vorodi gtavasot karbar (input ha)
+  const user = await User.findOne({useremail:req.body.useremail})
+  console.log(user.username);
+  //  console.log(req.body.useremail); //inja dastresi darim be data vorodi gtavasot karbar (input ha)
   if(!user){
     
     return {status:'error',error:'invalid login'}
@@ -38,9 +37,15 @@ app.post('/api/login',async(req,res)=>{
   const token = jwt.sign({
     name:user.username,
     email:user.useremail,
-  },process.env.JWT_SECRET)
+    img:user.usercustomimg
+  },'myfirstprojectworkingwithjwt10801')
 
-  return res.json({status:'ok',user:token})
+  // const decoded = jwt.verify(token,process.env.JWT_SECRET)
+  // const email = decoded.email
+  // const userr = await User.findOne({email:email})
+  //   console.log(userr);
+  
+  return res.send({status:'ok',token})
   
 })
 
@@ -52,13 +57,26 @@ app.get('/api/personal', async(req,res)=>{
     const email = decoded.email
     const user = await User.findOne({email:email})
     // console.log(user);
-    return res.json({status:'ok',data:user})
+    return res.json({status:'ok',user:user})
   } catch (error) {
     console.log(error);
     res.json({status:'error',error:'invalid token'})
   }
 })
+app.get('/api/coddingaddict',(req, res,) => {
+  const authHeader = req.headers.authorization
 
+  
+
+  const token = authHeader.split(' ')[1]
+
+  console.log(token);
+ 
+    const decoded = jwt.verify(token, process.env.JWT_SECRET)
+    const { name , email } = decoded
+    res.status(200).json({name,email})
+    
+})
 app.use('/foods', foodsRoute);
 app.use('/users', usersRoute);
 
