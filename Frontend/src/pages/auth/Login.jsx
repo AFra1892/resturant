@@ -13,10 +13,10 @@ const Login = () => {
 
     })
     const data = await response.json() // json nakoni password ro nemifahme
-    console.log(`this what i fetched ${data}`);
+    console.log(`this what i fetched ${data.token}`);
     
     if(data.token){
-      localStorage.setItem('token',data.token)
+      localStorage.setItem('token',`Bearer ${data.token}`)
       alert('login successful')
       window.location.href = '/dashboard'
     }else{

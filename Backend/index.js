@@ -28,7 +28,7 @@ app.get('/', (request, response) => {
 
 app.post('/api/login',async(req,res)=>{
   const user = await User.findOne({useremail:req.body.useremail})
-  console.log(user.username);
+  // console.log(user.username);
   //  console.log(req.body.useremail); //inja dastresi darim be data vorodi gtavasot karbar (input ha)
   if(!user){
     
@@ -38,14 +38,13 @@ app.post('/api/login',async(req,res)=>{
     name:user.username,
     email:user.useremail,
     img:user.usercustomimg
-  },'myfirstprojectworkingwithjwt10801')
+  },process.env.JWT_SECRET)
 
-  // const decoded = jwt.verify(token,process.env.JWT_SECRET)
-  // const email = decoded.email
-  // const userr = await User.findOne({email:email})
-  //   console.log(userr);
+  const decoded = jwt.verify(token,process.env.JWT_SECRET)
+  const userr = decoded
+    console.log(userr);
   
-  return res.send({status:'ok',token})
+  return res.send({status:'ok',token:token })
   
 })
 
