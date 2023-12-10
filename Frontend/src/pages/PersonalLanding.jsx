@@ -3,13 +3,14 @@ import jwt from 'jsonwebtoken'
 import Navbar from '../components/navbar/Navbar'
 import { IoMdExit } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
+
 const DashTest = () => {
     const [logedInUser,setLogedInUser] = useState({})
     const navigate = useNavigate();
     useEffect(()=>{
         const token = localStorage.getItem('token')
         const t = token.split(' ')[1]
-        const decoded = jwt.verify(t,'myfirstprojectworkingwithjwt10801')
+        const decoded = jwt.verify(t,process.env.REACT_APP_JWT)
         setLogedInUser(decoded)
         // console.log(decoded);
 
