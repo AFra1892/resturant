@@ -2,8 +2,11 @@ import {useState,useEffect} from 'react'
 import axios from 'axios'
 import MenuCard from './MenuCard'
 import Navbar from '../../components/navbar/Navbar'
-const Menu = () => {
+import ShoppingCard from '../ShoppingCard'
+import { FaShoppingBag } from "react-icons/fa";
 
+const Menu = () => {
+    const orders = []
     const [menu,setMenu] = useState([])
     const [cat,setCat] = useState('burger')
 
@@ -18,9 +21,13 @@ const Menu = () => {
             })
     },[])
 
+    
   return (
     <>
     <Navbar/>
+    
+        <a href='/shoppingcard'><FaShoppingBag   size={50}/></a>
+    
     <div className='flex'>
         <div className="">
                   <button 
@@ -55,7 +62,7 @@ const Menu = () => {
                     </button>
                 </ul>
             </div>
-        <MenuCard menu={menu} cat={cat} />
+        <MenuCard menu={menu} cat={cat} orders={orders} />
     </div>
     </>
   )
