@@ -1,5 +1,4 @@
 import './App.css';
-import {useState} from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing'
 import AboutPage from './pages/AboutPage';
@@ -12,6 +11,7 @@ import SpecialPage from './pages/menu/SpecialPage'
 import SignUp from './pages/auth/SignUp';
 import Login from './pages/auth/Login';
 import PersonalLanding from './pages/PersonalLanding'
+import ShoppingCard from './pages/ShoppingCard';
 function App() {
 
   return (
@@ -27,10 +27,12 @@ function App() {
         {/* menu based on database */}
         <Route path="/menu" element={<Menu/>} />
         <Route path="/newMenu/:id" element={<SpecialPage />} />
-        authorization pages
+        {/* authorization pages */}
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<Login />} />
         <Route path="/dashboard" element={<PersonalLanding/>} />
+
+        <Route path="/shoppingcard" element={<ShoppingCard/>} />
 
       </Routes>
     </div>

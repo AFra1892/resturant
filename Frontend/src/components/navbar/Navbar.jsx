@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {RiMenu3Line, RiCloseLine} from 'react-icons/ri'
 import './navbar.css'
-
+import { FaCartShopping } from "react-icons/fa6";
 const NavList = ()=>(
   <>
     <p><a href='/'>Home</a></p>
@@ -9,7 +9,7 @@ const NavList = ()=>(
     <p><a href='/about'>About</a></p>
     <p><a href='#gallery'>Gallery</a></p>
     <p><a href='#contact'>Contact</a></p>
-    <i class='bx bx-shopping-bag' ></i>
+    <a href='/shoppingcard'><FaCartShopping color='white' size={20} /></a>
   </>
 )
 

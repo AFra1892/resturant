@@ -22,18 +22,18 @@ const Menu = () => {
     <>
     <Navbar/>
     <div className='flex'>
-        <div className="resturant__menu-categories">
+        <div className="">
                   <button 
                 id="favorite-category"
                     onClick={()=>setCat("favorite")}
-                    className={`filter-btn ${cat === 'favorite' ? "active-btn" : "" }`}
+                    className=''
                 >
                     Favorite ⭐ 
                 </button> 
-                <ul className="resturant__menu-categories_items">
+                <ul className="">
                 <button 
                         onClick={()=>setCat("burger")}
-                        className={`filter-btn ${cat === 'burger' ? "active-btn" : "" }`}
+                        className=''
                     >
                         Burger 🍔
                     </button>   
@@ -41,7 +41,7 @@ const Menu = () => {
                     
                     <button 
                         onClick={()=>setCat("nugget")}
-                        className={`filter-btn ${cat === 'nugget' ? "active-btn" : "" }`}
+                        className=''
                     >
                         Chicken 🍗
                     </button>
@@ -49,7 +49,7 @@ const Menu = () => {
                    
                     <button 
                         onClick={()=>setCat("drink")}
-                        className={`filter-btn ${cat === 'pizza' ? "active-btn" : "" }`}
+                        className=''
                     >
                         Drink 🍹
                     </button>
