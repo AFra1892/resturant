@@ -11,14 +11,11 @@ import SpecialPage from './pages/menu/SpecialPage'
 import SignUp from './pages/auth/SignUp';
 import Login from './pages/auth/Login';
 import PersonalLanding from './pages/PersonalLanding'
-import ShopContextProvider from './context/ShopContext';
-import Cart from './pages/Cart'
-import { Shop } from './pages/shop/shop';
+
 function App() {
 
   return (
     <div className="App">
-    <ShopContextProvider>
       <Routes>
         <Route path='/' element={<Landing/>}/>
         <Route path="/about" element={<AboutPage />} />
@@ -35,13 +32,8 @@ function App() {
         <Route path="/signin" element={<Login />} />
         <Route path="/dashboard" element={<PersonalLanding/>} />
 
-        test
-        <Route path="/shop" element={<Shop />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
-        <Route path="/cart" element={<Cart />} />
-
+       
       </Routes>
-    </ShopContextProvider>
     </div>
   );
 }
