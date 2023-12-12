@@ -2,9 +2,11 @@ import {useState , useContext} from 'react'
 import { BsInfoCircle } from 'react-icons/bs';
 import { IoIosAddCircle } from "react-icons/io";
 import { Link } from 'react-router-dom';
+import {OrderContext} from '../../context/order-context'
 
 const MenuSingleCard = ({ food }) => {
-  
+  const {addToCart , cartItems} = useContext(OrderContext);
+  const cartItemsCount = cartItems[food.id]//bayad ye id adadi to db ezafe konam
     
   return (
     <div className='border-2 border-gray-500 rounded-lg px-4 py-2 m-4 relative hover:shadow-xl'>
@@ -17,8 +19,10 @@ const MenuSingleCard = ({ food }) => {
           <Link to={`/newMenu/${food._id}`}>
               <BsInfoCircle className='text-2xl text-green-800' />
           </Link>
-          <IoIosAddCircle className='cursor-pointer'  size={30}/>
         </div>
+        <button className="addToCartBttn" onClick={() => addToCart(food.id)}>
+        Add To Cart {cartItemsCount > 0 && <> ({cartItemsCount})</>}
+      </button>
         
     </div>
   );

@@ -8,7 +8,6 @@ const Menu = () => {
     const orders = []
     const [menu,setMenu] = useState([])
     const [cat,setCat] = useState('burger')
-
     useEffect(()=>{
         axios
             .get('http://localhost:5555/foods')
@@ -24,9 +23,7 @@ const Menu = () => {
   return (
     <>
     <Navbar/>
-    
-        <a href='/shoppingcard'><FaShoppingBag   size={50}/></a>
-    
+        
     <div className='flex'>
         <div className="">
                   <button 

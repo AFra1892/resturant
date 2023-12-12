@@ -11,11 +11,14 @@ import SpecialPage from './pages/menu/SpecialPage'
 import SignUp from './pages/auth/SignUp';
 import Login from './pages/auth/Login';
 import PersonalLanding from './pages/PersonalLanding'
-
+import { OrderContextProvider } from './context/order-context';
+import {Cart} from './pages/cart/cart'
 function App() {
 
   return (
     <div className="App">
+      <OrderContextProvider>
+
       <Routes>
         <Route path='/' element={<Landing/>}/>
         <Route path="/about" element={<AboutPage />} />
@@ -31,9 +34,10 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<Login />} />
         <Route path="/dashboard" element={<PersonalLanding/>} />
+        <Route path="/cart" element={<Cart/>} />
 
-       
       </Routes>
+      </OrderContextProvider>
     </div>
   );
 }
