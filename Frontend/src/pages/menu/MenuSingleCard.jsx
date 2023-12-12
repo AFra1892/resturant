@@ -1,11 +1,12 @@
-import {useState} from 'react'
+import {useState , useContext} from 'react'
 import { BsInfoCircle } from 'react-icons/bs';
 import { IoIosAddCircle } from "react-icons/io";
 import { Link } from 'react-router-dom';
+import {ShContext} from '../../context/ShopContext'
 
 const MenuSingleCard = ({ food }) => {
   
-  
+  let {cartItems,addToCart} = useContext(ShContext)
     
   return (
     <div className='border-2 border-gray-500 rounded-lg px-4 py-2 m-4 relative hover:shadow-xl'>
@@ -18,7 +19,7 @@ const MenuSingleCard = ({ food }) => {
           <Link to={`/newMenu/${food._id}`}>
               <BsInfoCircle className='text-2xl text-green-800' />
           </Link>
-          <IoIosAddCircle size={30}/>
+          <IoIosAddCircle className='cursor-pointer'  onClick={addToCart(addToCart(food.name))} size={30}/>
         </div>
         
     </div>
