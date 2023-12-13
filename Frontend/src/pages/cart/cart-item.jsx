@@ -1,20 +1,31 @@
-import React , { useContext } from "react";
+import React , { useState } from "react";
 import { OrderContext } from "../../context/order-context";
-
+import './cart.css'
 export const CartItem = (props) =>{
     const { idd, name , price , imgUrl}  = props;
+    const [count, setCount] = useState(1);
+    const [totPrice , setTotPrice] = useState(price)
+    const handleIncrease = () => {
+      setCount(count + 1);
+      setTotPrice(totPrice+price)
+    };
+  
+    const handleDecrease = () => {
+      setCount(count - 1);
+      setTotPrice(totPrice-price)
+    };
     return (
         <div className="cartItem">
           <img src={imgUrl} />
           <div className="description">
-            <p> Price: ${price}</p>
+            <p> Price: ${totPrice}</p>
             <div className="countHandler">
-              {/* <button onClick={() => removeFromCart(idd)}> - </button>
+              <button onClick={handleDecrease} > - </button>
               <input
-                value={cartItems[idd]}
-                onChange={(e) => updateCartItemCount(Number(e.target.value), idd)}
+                value={count}
+                
               />
-              <button onClick={() => addToCart(idd)}> + </button> */}
+              <button onClick={handleIncrease} > + </button>
             </div>
           </div>
         </div>
