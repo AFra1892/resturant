@@ -5,7 +5,7 @@ import Navbar from '../../components/navbar/Navbar'
 import './shop.css'
 import MenuSingleCard from './MenuSingleCard';
 
-const Menu = () => {
+const Menu = ({logedInUser}) => {
     const [menu,setMenu] = useState([])
     const [cat,setCat] = useState('burger')
     useEffect(()=>{
@@ -62,7 +62,7 @@ const Menu = () => {
         <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
       {menu.map((item) => {
         if(item.category === cat){
-            return <MenuSingleCard key={item._id} food={item}  />
+            return <MenuSingleCard key={item._id} food={item} logedInUser={logedInUser} />
         }
       }
         
