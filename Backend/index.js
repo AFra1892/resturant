@@ -37,7 +37,8 @@ app.post('/api/login',async(req,res)=>{
   const token = jwt.sign({
     name:user.username,
     email:user.useremail,
-    img:user.usercustomimg
+    img:user.usercustomimg,
+
   },process.env.JWT_SECRET)
 
   const decoded = jwt.verify(token,process.env.JWT_SECRET)
@@ -73,7 +74,7 @@ app.get('/api/coddingaddict',(req, res,) => {
  
     const decoded = jwt.verify(token, process.env.JWT_SECRET)
     const { name , email } = decoded
-    res.status(200).json({name,email})
+    res.status(200).json({name,email,orders})
     
 })
 app.put('/addItem',async(req,res)=>{
@@ -82,7 +83,11 @@ app.put('/addItem',async(req,res)=>{
   console.log(user.username);
   res.status(200).send('updated')
 })
-
+app.post('/logeduserorders',async(req,res)=>{
+  const user = await User.findOne({username:req.body.name})
+  console.log(user.orders);
+  res.json({status:'ok',orders:user.orders})
+})
 
 
 
