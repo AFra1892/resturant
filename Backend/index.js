@@ -42,7 +42,7 @@ app.post('/api/login',async(req,res)=>{
 
   const decoded = jwt.verify(token,process.env.JWT_SECRET)
   const userr = decoded
-    console.log(userr);
+    // console.log(userr);
   
   return res.send({status:'ok',token:token })
   

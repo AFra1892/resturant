@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken'
 import Navbar from '../components/navbar/Navbar'
 import { IoMdExit } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const DashTest = () => {
     const [logedInUser,setLogedInUser] = useState({})
@@ -15,6 +16,8 @@ const DashTest = () => {
         // console.log(decoded);
 
     },[])
+
+  
     const styles = {
         backgroundImage: `url(${logedInUser.img})`,
         backgroundSize: 'cover'
@@ -35,7 +38,7 @@ const DashTest = () => {
                 <h1>Hello <span>{logedInUser.name}</span> Welcome to PizzaHub</h1>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
                 <div className="pizzahub__header-content_btns">
-                    <button type='button'>Order your Favourite</button>
+                    <button  type='button'>Button</button>
                 </div>
             </div>
         </div>    
