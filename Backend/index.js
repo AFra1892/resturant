@@ -76,6 +76,21 @@ app.get('/api/coddingaddict',(req, res,) => {
     res.status(200).json({name,email})
     
 })
+app.put('/addItem',async(req,res)=>{
+  console.log(req.body.data.username);
+  const user = await User.findOneAndUpdate({username:req.body.data.username},  { $push: { orders: req.body.data.order } })
+  console.log(user.username);
+  res.status(200).send('updated')
+})
+
+
+
+
+
+
+
+
+
 app.use('/foods', foodsRoute);
 app.use('/users', usersRoute);
 

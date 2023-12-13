@@ -70,6 +70,7 @@ const Menu = ({logedInUser}) => {
       )}
     </div>
     </div>
+    
     </>
   )
 }
