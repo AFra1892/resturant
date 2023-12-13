@@ -80,16 +80,21 @@ app.get('/api/coddingaddict',(req, res,) => {
 app.put('/addItem',async(req,res)=>{
   console.log(req.body.data.username);
   const user = await User.findOneAndUpdate({username:req.body.data.username},  { $push: { orders: req.body.data.order } })
-  console.log(user.username);
+  
   res.status(200).send('updated')
 })
 app.post('/logeduserorders',async(req,res)=>{
   const user = await User.findOne({username:req.body.name})
-  console.log(user.orders);
+  
   res.json({status:'ok',orders:user.orders})
 })
 
-
+// app.put('/deleteItem',async(req,res)=>{
+//   console.log(req.body.data.username);
+//   const user = await User.findOneAndUpdate({username:req.body.data.username},  { $pull: { orders: req.body.data.order } })
+  
+//   res.status(200).send('updated')
+// })
 
 
 

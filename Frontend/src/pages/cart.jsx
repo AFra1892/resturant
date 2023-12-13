@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { ShareContext } from "../context/share-context";
+import React, { useState } from "react";
 import { CartItem } from "./cart/cart-item";
-import axios from "axios";
+
 export const Cart = ({logedInUser})=>{
     const {name} = logedInUser
     const [testOrder , setTestOrder] = useState([])
@@ -20,7 +19,7 @@ export const Cart = ({logedInUser})=>{
             <button onClick={loginUser}  type="submit">Show Orders</button>
             <h1>{logedInUser.name} This is your current Order:</h1>
             {testOrder.map((order)=>{
-                return <CartItem imgUrl={order.imgUrl} name={order.name} price={order.price}/>
+                return <CartItem logedInUser={logedInUser} order={order}/>
             })}
         </div>
     );

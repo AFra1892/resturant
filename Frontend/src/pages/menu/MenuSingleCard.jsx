@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const MenuSingleCard = ({ food,logedInUser }) => {
+  
   const {name , orders} = logedInUser
     const addToOrder = ()=>{
-      alert('got clicked')
-      //bayad az findOneAndUpdate estefade konam
+      alert('item added to order list')
+      
+        
       axios.put("http://localhost:5555/addItem", {
-        data: {
-          username:name,
-          order:food
-          }            
+        
+        data: {username:name,order:food}            
         })
       .then((res) => {
         console.log(res.data);      
@@ -21,6 +21,8 @@ const MenuSingleCard = ({ food,logedInUser }) => {
       .catch((err) => {
         console.log(err);
       })
+    
+    
     }
     
   return (
@@ -39,6 +41,7 @@ const MenuSingleCard = ({ food,logedInUser }) => {
         <button className="addToCartBttn" onClick={addToOrder}>
         Add To Cart 
       </button>
+     
         
     </div>
   );

@@ -1,10 +1,32 @@
 import React , { useState } from "react";
-import { OrderContext } from "../../context/order-context";
+import { IoIosRemoveCircleOutline } from "react-icons/io";
+import axios from "axios";
 import './cart.css'
-export const CartItem = (props) =>{
-    const { idd, name , price , imgUrl}  = props;
+export const CartItem = ({order,logedInUser}) =>{
+  const {namee} = logedInUser
+    const { idd, name , price , imgUrl}  = order;
     const [count, setCount] = useState(1);
     const [totPrice , setTotPrice] = useState(price)
+
+    //kar nemikone
+    // const removeFromOrder = ()=>{
+    //   alert('item deleted from order list')
+      
+        
+    //   axios.put("http://localhost:5555/deleteItem", {
+        
+    //     data: {username:namee,order:order}            
+    //     })
+    //   .then((res) => {
+    //     console.log(res.data);      
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   })
+    
+    
+    // }
+
     const handleIncrease = () => {
       setCount(count + 1);
       setTotPrice(totPrice+price)
@@ -27,7 +49,10 @@ export const CartItem = (props) =>{
               />
               <button onClick={handleIncrease} > + </button>
             </div>
+
           </div>
+          <IoIosRemoveCircleOutline  size={40} color="red" />
+          <button onClick={removeFromOrder} type="submit">Delete</button>
         </div>
       );
 }
