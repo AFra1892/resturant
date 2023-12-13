@@ -1,3 +1,5 @@
+import { useState,useEffect } from 'react';
+import jwt from 'jsonwebtoken'
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing'
@@ -11,14 +13,23 @@ import SpecialPage from './pages/menu/SpecialPage'
 import SignUp from './pages/auth/SignUp';
 import Login from './pages/auth/Login';
 import PersonalLanding from './pages/PersonalLanding'
-import { OrderContextProvider } from './context/order-context';
-import {Cart} from './pages/cart/cart'
+import { ShareContextProvider } from './context/share-context';
+import {Cart} from './pages/cart'
 import { Shop } from './pages/shop/shop';
 function App() {
 
+  const [logedInUser,setLogedInUser] = useState({})
+    useEffect(()=>{
+      if(localStorage.getItem('token')!== null){
+        const token = localStorage.getItem('token')
+        const t = token.split(' ')[1]
+        const decoded = jwt.verify(t,process.env.REACT_APP_JWT)
+        setLogedInUser(decoded)}
+    },[])
+
   return (
     <div className="App">
-      <OrderContextProvider>
+      <ShareContextProvider>
     <Router>
       <Routes>
         <Route path='/' element={<Landing/>}/>
@@ -29,18 +40,18 @@ function App() {
         <Route path="/test/create" element={<CreateFood/>} />
         <Route path="/test/delete/:id" element={<DeleteFood/>} />
         {/* menu based on database */}
-        <Route path="/menu" element={<Menu/>} />
+        <Route path="/menu" element={<Menu logedInUser={logedInUser}/>} />
         <Route path="/menu/:id" element={<SpecialPage />} />
         {/* authorization pages */}
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<Login />} />
-        <Route path="/dashboard" element={<PersonalLanding/>} />
+        <Route path="/dashboard" element={<PersonalLanding logedInUser={logedInUser}/>} />
         <Route path="/cart" element={<Cart/>} />
         <Route path="/shop" element={<Shop/>} />
 
       </Routes>
       </Router>
-      </OrderContextProvider>
+      </ShareContextProvider>
     </div>
   );
 }

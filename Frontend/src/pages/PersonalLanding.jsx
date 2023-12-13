@@ -1,21 +1,23 @@
-import React, {useState, useEffect } from 'react'
+import React, {useState, useEffect,useContext } from 'react'
+import { ShareContext } from '../context/share-context';
 import jwt from 'jsonwebtoken'
 import Navbar from '../components/navbar/Navbar'
 import { IoMdExit } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
-const DashTest = () => {
-    const [logedInUser,setLogedInUser] = useState({})
+const DashTest = ({logedInUser}) => {
     const navigate = useNavigate();
-    useEffect(()=>{
-        const token = localStorage.getItem('token')
-        const t = token.split(' ')[1]
-        const decoded = jwt.verify(t,process.env.REACT_APP_JWT)
-        setLogedInUser(decoded)
-        // console.log(decoded);
 
-    },[])
+    // montaqel kardam be app js ta betonam to menu ham dastresi dashte basham
+    // const [logedInUser,setLogedInUser] = useState({})
+    // useEffect(()=>{
+    //     const token = localStorage.getItem('token')
+    //     const t = token.split(' ')[1]
+    //     const decoded = jwt.verify(t,process.env.REACT_APP_JWT)
+    //     setLogedInUser(decoded)
+    // },[])
+    
+    
 
   
     const styles = {
