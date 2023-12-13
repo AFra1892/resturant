@@ -9,7 +9,7 @@ const NavList = ()=>(
     <p><a href='/about'>About</a></p>
     <p><a href='#gallery'>Gallery</a></p>
     <p><a href='#contact'>Contact</a></p>
-    <a href='/shoppingcard'><FaCartShopping color='white' size={20} /></a>
+    <a href='/cart'><FaCartShopping color='white' size={20} /></a>
   </>
 )
 

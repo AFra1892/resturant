@@ -17,6 +17,10 @@ const userSchema = mongoose.Schema({
     usercustomimg:{
         type:String,
         required:false
+    },
+    orders:{
+        type:Array,
+        required:false
     }
 })
 

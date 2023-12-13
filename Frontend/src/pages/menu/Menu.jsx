@@ -2,10 +2,10 @@ import {useState,useEffect} from 'react'
 import axios from 'axios'
 import MenuCard from './MenuCard'
 import Navbar from '../../components/navbar/Navbar'
-import { FaShoppingBag } from "react-icons/fa";
+import './shop.css'
+import MenuSingleCard from './MenuSingleCard';
 
 const Menu = () => {
-    const orders = []
     const [menu,setMenu] = useState([])
     const [cat,setCat] = useState('burger')
     useEffect(()=>{
@@ -58,7 +58,17 @@ const Menu = () => {
                     </button>
                 </ul>
             </div>
-        <MenuCard menu={menu} cat={cat} orders={orders} />
+        {/* <MenuCard menu={menu} cat={cat}/> */}
+        <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+      {menu.map((item) => {
+        if(item.category === cat){
+            return <MenuSingleCard key={item._id} food={item}  />
+        }
+      }
+        
+        
+      )}
+    </div>
     </div>
     </>
   )

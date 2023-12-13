@@ -5,30 +5,22 @@ import { CartItem } from "./cart-item";
 import axios from "axios";
 import './cart.css'
 export const Cart = ()=>{
-    const [menu,setMenu] = useState([])
-    const {cartItems ,getTotalCartAmount, checkout} = useContext(OrderContext);
+    // const [menu,setMenu] = useState([])
+    const {menu , cartItems ,getTotalCartAmount, checkout} = useContext(OrderContext);
     const totalAmount = getTotalCartAmount();
 
     const navigate = useNavigate();
-    useEffect(()=>{
-        axios
-            .get('http://localhost:5555/foods')
-            .then((res)=>{
-                setMenu(res.data.data)
-            })
-            .catch((error)=>{
-                console.log(error);
-            })
-    },[])
-
+    
+    
     return(
         <div className="cart">
+
       <div>
         <h1>Your Cart Items</h1>
       </div>
       <div className="cart">
         {menu.map((product) => {
-          if (cartItems[product.id] !== 0) {
+          if (cartItems[product.idd] !== 0) {
             return <CartItem data={product} />;
           }
         })}

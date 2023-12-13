@@ -2,7 +2,7 @@ import React , { useContext } from "react";
 import { OrderContext } from "../../context/order-context";
 
 export const CartItem = (props) =>{
-    const {id , name , price , imgUrl}  = props.data;
+    const {idd , name , price , imgUrl}  = props.data;
     const { cartItems, addToCart, removeFromCart, updateCartItemCount } =
     useContext(OrderContext);
     return (
@@ -10,16 +10,16 @@ export const CartItem = (props) =>{
           <img src={imgUrl} />
           <div className="description">
             <p>
-              <b>{name}</b>
+              <b>{cartItems[`${idd}`]}</b>
             </p>
             <p> Price: ${price}</p>
             <div className="countHandler">
-              <button onClick={() => removeFromCart(id)}> - </button>
+              <button onClick={() => removeFromCart(idd)}> - </button>
               <input
-                value={cartItems[id]}
-                onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
+                value={cartItems[idd]}
+                onChange={(e) => updateCartItemCount(Number(e.target.value), idd)}
               />
-              <button onClick={() => addToCart(id)}> + </button>
+              <button onClick={() => addToCart(idd)}> + </button>
             </div>
           </div>
         </div>
