@@ -19,10 +19,7 @@ function Landing() {
       <div className='header'>
         <Header/>
       </div>
-      {/* {menuData.map((item)=>{
-
-         return <img src={item.img}/>
-      })} */}
+      
       <BestDeal/>
       <div id='gallery' className='dn section__padding'>
         <div className='slider-container_content'>
@@ -39,7 +36,6 @@ function Landing() {
           <Slider slides={slides} parentWidth={500} />
         </div>
       </div>
-      {/* <Drink coldDrink={coldDrink}/> */}
     </div>
   );
 }
