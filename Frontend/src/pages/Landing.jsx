@@ -16,13 +16,7 @@ function Landing() {
     { url: "ig4.jpg", title: "city" },
     { url: "ig5.jpg", title: "italy" },
   ];
-  const coldDrink = [
-    {name:"soda",price:"$2"},
-    {name:"soda",price:"$2"},
-    {name:"soda",price:"$2"},
-    {name:"soda",price:"$2"},
-    {name:"soda",price:"$2"}
-]
+  
   return (
     <div className="App">
       <div className='header'>

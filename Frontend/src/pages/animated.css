@@ -1,0 +1,104 @@
+/* <!-- LANDING PAGE HEADER --> */
+/* <!-- with animated elements --> */
+* {
+    background: white;
+  }
+  
+  nav {
+    height: 10vh;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  nav ul {
+    list-style: none;
+  }
+  
+  nav li {
+    padding: .5vw 5vw;
+  }
+  
+  header {
+    display: flex;
+    height: 80vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+   /* Floating Shadow Pseudoelement */
+    .header-text h1:after, .header-text h2:after { 
+      content:'';
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      bottom: +60px;
+      width: 90%;
+      max-width: 80%;
+      height: 10px;
+      background: transparent;
+      border-radius: 100px/50px;
+      box-shadow: 0 50px 40px rgba(0,0,0,0.8);
+      }
+  
+  h1 {
+    font-family: sans-serif;
+    font-size: 10vw;
+  }
+  
+  h2, li {
+    font-family: sans-serif;
+    font-size: 2vw;
+  }
+  
+  /* ANIMATION */
+  /* Classes */
+  .fade-in {
+    animation: fadeIn 1s linear .5s 1 forwards;
+  }
+  
+  .fade-up {
+   animation: fadeUp 1s linear .5s 1 forwards;
+  }
+  
+  /* The animation code */
+  @keyframes fadeIn {
+    0%   {opacity: 0; 
+          transform: translate(0, -10vh);
+          }
+    25%  {opacity: .1; 
+          transform: translate(0, -6vh);
+          }
+    50%  {opacity: .5; 
+          transform: translate(0, -3vh);
+          }
+    100% {opacity: 1; 
+          transform: translate(0, 0);
+          }
+  }
+  
+  @keyframes fadeUp {
+    0%   {opacity: 0; 
+          transform: translate(0, 10vh);
+          }
+    25%  {opacity: .3; 
+          transform: translate(0, 6vh);
+          }
+    50%  {opacity: .6; 
+          transform: translate(0, 3vh);
+          }
+    100% {opacity: 1; 
+          transform: translate(0, 0);
+          }
+  }

@@ -4,12 +4,12 @@ import './navbar.css'
 import { FaCartShopping } from "react-icons/fa6";
 const NavList = ()=>(
   <>
-    <p><a href='/'>Home</a></p>
-    <p><a href='/menu'>Menu</a></p>
-    <p><a href='/about'>About</a></p>
-    <p><a href='#gallery'>Gallery</a></p>
-    <p><a href='#contact'>Contact</a></p>
-    <a href='/cart'><FaCartShopping color='white' size={20} /></a>
+    <p><a className='fade-in' href='/'>Home</a></p>
+    <p><a className='fade-in' href='/menu'>Menu</a></p>
+    <p><a className='fade-in' href='/about'>About</a></p>
+    <p><a className='fade-in' href='#gallery'>Gallery</a></p>
+    <p><a className='fade-in' href='#contact'>Contact</a></p>
+    <a className='fade-in' href='/cart'><FaCartShopping color='white' size={20} /></a>
   </>
 )
 

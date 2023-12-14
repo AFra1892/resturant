@@ -15,6 +15,7 @@ a{
 }
 .header{
   background: url('./assets/header-bg\ \(2\).jpg');
+  background-color: #83b483;
   background-size: cover;
   height: 100vh;
 
