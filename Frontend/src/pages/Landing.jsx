@@ -1,12 +1,11 @@
 import '../App.css';
 import Navbar from '../components/navbar/Navbar';
 import Header from '../components/header/Header';
-import Footer from '../components/Footer/Footer';
 import React from 'react';
 import Slider from '../components/Slider/Slider';
-import Drink from '../components/Drink/Drink';
 import BestDeal from '../components/bestDeal/BestDeal';
 import people from '../assets/people.png'
+import FooterTail from '../components/FooterTail';
 
 function Landing() {
   const slides = [
@@ -44,7 +43,7 @@ function Landing() {
         </div>
       </div>
       {/* <Drink coldDrink={coldDrink}/> */}
-      <Footer/>
+      <FooterTail/>
     </div>
   );
 }

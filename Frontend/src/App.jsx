@@ -16,7 +16,6 @@ import PersonalLanding from './pages/PersonalLanding'
 import { ShareContextProvider } from './context/share-context';
 import {Cart} from './pages/cart'
 import { Shop } from './pages/shop/shop';
-import AnimatedLanding from './pages/AnimatedLanding';
 function App() {
 
   const [logedInUser,setLogedInUser] = useState({})
@@ -33,7 +32,7 @@ function App() {
       <ShareContextProvider>
     <Router>
       <Routes>
-        <Route path='/' element={<AnimatedLanding/>}/>
+        <Route path='/' element={<Landing/>}/>
         <Route path="/about" element={<AboutPage />} />
         <Route path="/menu/chicken" element={<ItemDetail />} />
         {/* control panel */}
