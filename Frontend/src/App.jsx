@@ -16,6 +16,8 @@ import PersonalLanding from './pages/PersonalLanding'
 import { ShareContextProvider } from './context/share-context';
 import {Cart} from './pages/cart'
 import { Shop } from './pages/shop/shop';
+import Navbar from './components/navbar/Navbar';
+import FooterTail from './components/FooterTail';
 function App() {
 
   const [logedInUser,setLogedInUser] = useState({})
@@ -30,6 +32,7 @@ function App() {
   return (
     <div className="App">
       <ShareContextProvider>
+        <Navbar/>
     <Router>
       <Routes>
         <Route path='/' element={<Landing/>}/>
@@ -51,6 +54,7 @@ function App() {
 
       </Routes>
       </Router>
+      <FooterTail/>
       </ShareContextProvider>
     </div>
   );

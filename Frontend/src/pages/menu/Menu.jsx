@@ -1,7 +1,5 @@
 import {useState,useEffect} from 'react'
 import axios from 'axios'
-import MenuCard from './MenuCard'
-import Navbar from '../../components/navbar/Navbar'
 import './shop.css'
 import MenuSingleCard from './MenuSingleCard';
 
@@ -22,7 +20,6 @@ const Menu = ({logedInUser}) => {
     
   return (
     <>
-    <Navbar/>
         
     <div className='flex'>
         <div className="">

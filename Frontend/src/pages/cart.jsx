@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { CartItem } from "./cart/cart-item";
-import Navbar from "../components/navbar/Navbar";
 
 export const Cart = ({logedInUser})=>{
     const {name} = logedInUser
@@ -17,7 +16,6 @@ export const Cart = ({logedInUser})=>{
     }
     return(
         <div>
-            <Navbar/>
             <button onClick={loginUser}  type="submit">Show Orders</button>
             <h1>{logedInUser.name} This is your current Order:</h1>
             {testOrder.map((order)=>{

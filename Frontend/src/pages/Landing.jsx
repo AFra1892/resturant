@@ -1,11 +1,9 @@
 import '../App.css';
-import Navbar from '../components/navbar/Navbar';
 import Header from '../components/header/Header';
 import React from 'react';
 import Slider from '../components/Slider/Slider';
 import BestDeal from '../components/bestDeal/BestDeal';
 import people from '../assets/people.png'
-import FooterTail from '../components/FooterTail';
 
 function Landing() {
   const slides = [
@@ -19,7 +17,6 @@ function Landing() {
   return (
     <div className="App">
       <div className='header'>
-        <Navbar/>
         <Header/>
       </div>
       {/* {menuData.map((item)=>{
@@ -43,7 +40,6 @@ function Landing() {
         </div>
       </div>
       {/* <Drink coldDrink={coldDrink}/> */}
-      <FooterTail/>
     </div>
   );
 }
