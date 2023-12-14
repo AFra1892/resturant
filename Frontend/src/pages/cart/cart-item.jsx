@@ -52,7 +52,7 @@ export const CartItem = ({order,logedInUser}) =>{
 
           </div>
           <IoIosRemoveCircleOutline  size={40} color="red" />
-          <button onClick={removeFromOrder} type="submit">Delete</button>
+          
         </div>
       );
 }

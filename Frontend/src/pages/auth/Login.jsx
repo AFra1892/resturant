@@ -1,9 +1,10 @@
 import {useState} from 'react'
 import jwt from 'jsonwebtoken'
+import { useSnackbar } from 'notistack';
 const Login = () => {
   const [useremail,setUserEmail] = useState('')
   const [userpass,setUserPass] = useState('')
-  
+  const { enqueueSnackbar } = useSnackbar();
   async function loginUser(event){
     event.preventDefault()
     const response = await fetch('http://localhost:5555/api/login',{
@@ -17,10 +18,11 @@ const Login = () => {
     
     if(data.token){
       localStorage.setItem('token',`Bearer ${data.token}`)
-      alert('login successful')
+      // alert('login successful')
+      enqueueSnackbar('Loged in successfully', { variant: 'success' });
       window.location.href = '/dashboard'
     }else{
-      alert('please check your username and password')
+      enqueueSnackbar('Please Check your Username or Password', { variant: 'error' });
     }
   }
 

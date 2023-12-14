@@ -85,8 +85,8 @@ app.put('/addItem',async(req,res)=>{
 })
 app.post('/logeduserorders',async(req,res)=>{
   const user = await User.findOne({username:req.body.name})
-  
-  res.json({status:'ok',orders:user.orders})
+  const orders = user.orders
+  res.json({orders:orders})
 })
 
 // app.put('/deleteItem',async(req,res)=>{

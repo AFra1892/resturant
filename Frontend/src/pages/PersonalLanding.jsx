@@ -4,10 +4,10 @@ import jwt from 'jsonwebtoken'
 import Navbar from '../components/navbar/Navbar'
 import { IoMdExit } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
-
+import { useSnackbar } from 'notistack';
 const DashTest = ({logedInUser}) => {
     const navigate = useNavigate();
-
+    const { enqueueSnackbar } = useSnackbar();
     // montaqel kardam be app js ta betonam to menu ham dastresi dashte basham
     // const [logedInUser,setLogedInUser] = useState({})
     // useEffect(()=>{
@@ -25,9 +25,8 @@ const DashTest = ({logedInUser}) => {
         backgroundSize: 'cover'
     }
     function clickHandeler(){
-		alert('token was deleted')
 		localStorage.removeItem('token')
-		
+		enqueueSnackbar('Loged out successfully', { variant: 'success' });
 		navigate('/')
 	}
   return (
