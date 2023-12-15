@@ -1,7 +1,4 @@
-import React, {useState, useEffect,useContext } from 'react'
-import { ShareContext } from '../context/share-context';
-import jwt from 'jsonwebtoken'
-import Navbar from '../components/navbar/Navbar'
+import React from 'react'
 import { IoMdExit } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
@@ -32,7 +29,6 @@ const DashTest = ({logedInUser}) => {
   return (
     <>
     <div className='h-screen bg-red-400' style={styles}>
-        <Navbar/>
         <IoMdExit className='cursor-pointer absolute right-0' size={40} color='red' onClick={clickHandeler} />
 		<div className="pizzahub__header section__padding">
             <div className="pizzahub__header-content">

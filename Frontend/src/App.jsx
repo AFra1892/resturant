@@ -43,7 +43,7 @@ function App() {
         {/* control panel */}
         {/* <Route path="/test" element={<ManageMenu/>} /> */}
         <Route path="/test/create" element={logedInUser.name === 'admin'?<CreateFood/>:<Error/>} />
-        <Route path="/test/delete/:id" element={logedInUser.name ===admin ? <DeleteFood/> : <Error/>} />
+        <Route path="/test/delete/:id" element={logedInUser.name ==='admin' ? <DeleteFood/> : <Error/>} />
         {/* menu based on database */}
         <Route path="/menu" element={<Menu logedInUser={logedInUser}/>} />
         <Route path="/menu/:id" element={<SpecialPage />} />
