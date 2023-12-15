@@ -19,6 +19,7 @@ import { Shop } from './pages/shop/shop';
 import Navbar from './components/navbar/Navbar';
 import FooterTail from './components/FooterTail';
 import DeleteOrder from './pages/cart/DeleteCartItem';
+import Error from './pages/Error';
 function App() {
 
   const [logedInUser,setLogedInUser] = useState({})
@@ -29,20 +30,20 @@ function App() {
         const decoded = jwt.verify(t,process.env.REACT_APP_JWT)
         setLogedInUser(decoded)}
     },[])
-
+    
   return (
     <div className="App">
       <ShareContextProvider>
         <Navbar/>
     <Router>
       <Routes>
-        <Route path='/' element={<Landing/>}/>
+        <Route path='/' element={logedInUser.name === 'admin'?<ManageMenu/>:<Landing/>}/>
         <Route path="/about" element={<AboutPage />} />
         <Route path="/menu/chicken" element={<ItemDetail />} />
         {/* control panel */}
-        <Route path="/test" element={<ManageMenu/>} />
-        <Route path="/test/create" element={<CreateFood/>} />
-        <Route path="/test/delete/:id" element={<DeleteFood/>} />
+        {/* <Route path="/test" element={<ManageMenu/>} /> */}
+        <Route path="/test/create" element={logedInUser.name === 'admin'?<CreateFood/>:<Error/>} />
+        <Route path="/test/delete/:id" element={logedInUser.name ===admin ? <DeleteFood/> : <Error/>} />
         {/* menu based on database */}
         <Route path="/menu" element={<Menu logedInUser={logedInUser}/>} />
         <Route path="/menu/:id" element={<SpecialPage />} />
