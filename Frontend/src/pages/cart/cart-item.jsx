@@ -1,10 +1,10 @@
 import React , { useState } from "react";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
-import axios from "axios";
 import './cart.css'
+import {Link} from 'react-router-dom'
 export const CartItem = ({order,logedInUser}) =>{
-  const {namee} = logedInUser
-    const { idd, name , price , imgUrl}  = order;
+  const {name} = logedInUser
+    const {_id , price , imgUrl}  = order;
     const [count, setCount] = useState(1);
     const [totPrice , setTotPrice] = useState(price)
 
@@ -43,15 +43,17 @@ export const CartItem = ({order,logedInUser}) =>{
             <p> Price: ${totPrice}</p>
             <div className="countHandler">
               <button onClick={handleDecrease} > - </button>
-              <input
+              {/* <input
                 value={count}
                 
-              />
+              /> */}
               <button onClick={handleIncrease} > + </button>
             </div>
 
           </div>
-          <IoIosRemoveCircleOutline  size={40} color="red" />
+          <Link to={`/cart/user/${name}/delete/${_id}`}>
+              <IoIosRemoveCircleOutline  size={40} color="red" />
+          </Link>
           
         </div>
       );

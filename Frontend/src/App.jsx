@@ -18,6 +18,7 @@ import {Cart} from './pages/cart'
 import { Shop } from './pages/shop/shop';
 import Navbar from './components/navbar/Navbar';
 import FooterTail from './components/FooterTail';
+import DeleteOrder from './pages/cart/DeleteCartItem';
 function App() {
 
   const [logedInUser,setLogedInUser] = useState({})
@@ -50,6 +51,7 @@ function App() {
         <Route path="/signin" element={<Login />} />
         <Route path="/dashboard" element={<PersonalLanding logedInUser={logedInUser}/>} />
         <Route path="/cart" element={<Cart logedInUser={logedInUser}/>} />
+        <Route path="/cart/user/:name/delete/:id" element={<DeleteOrder/>} />
         <Route path="/shop" element={<Shop/>} />
 
       </Routes>

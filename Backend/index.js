@@ -6,6 +6,7 @@ import foodsRoute from './routes/foodsRoute.js';
 import usersRoute from './routes/users.Route.js'
 import cors from 'cors';
 import {User} from './models/userModel.js'
+import {Food} from './models/foodModel.js'
 
 import jwt from 'jsonwebtoken'
 
@@ -89,12 +90,18 @@ app.post('/logeduserorders',async(req,res)=>{
   res.json({orders:orders})
 })
 
-// app.put('/deleteItem',async(req,res)=>{
-//   console.log(req.body.data.username);
-//   const user = await User.findOneAndUpdate({username:req.body.data.username},  { $pull: { orders: req.body.data.order } })
-  
-//   res.status(200).send('updated')
-// })
+app.delete('/:name/user/:id', async (request, response) => {
+  try {
+    const { id , name } = request.params;
+
+    const result = await User.findOneAndUpdate({username:name}, {$pull:{orders:{_id:id}}});
+    
+    response.status(200).json(result)
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
 
 
 
