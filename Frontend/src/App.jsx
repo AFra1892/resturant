@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react';
+import { useState,useEffect, useContext } from 'react';
 import jwt from 'jsonwebtoken'
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -20,8 +20,9 @@ import Navbar from './components/navbar/Navbar';
 import FooterTail from './components/FooterTail';
 import DeleteOrder from './pages/cart/DeleteCartItem';
 import Error from './pages/Error';
-function App() {
+import LogedNavbar from './components/navbar/LogedNavbar';
 
+function App() {
   const [logedInUser,setLogedInUser] = useState({})
     useEffect(()=>{
       if(localStorage.getItem('token')!== null){

@@ -51,7 +51,7 @@ const Login = () => {
                 />
         
             
-            <button className='mt-3 bg-blue-300 w-full h-10' type='submit'>Create Account</button>
+            <button className='mt-3 bg-blue-300 w-full h-10' type='submit'>Log In</button>
             
 
 
