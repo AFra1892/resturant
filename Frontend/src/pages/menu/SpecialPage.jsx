@@ -26,18 +26,22 @@ const SpecialPage = () => {
 
   return (
     <>
-    <Navbar/>
-    <div className='p-4'>
+    <div className=' h-auto p-4 pb-32'>
       
-      <h1 className='text-3xl my-4'>{food.name} burger</h1>
       
-        <div className='flex flex-col border-2 border-sky-400 rounded-xl w-100 p-4'>
-          <div className='my-4'>
-            <img src={`../../images/${food.name}.jpg`} alt='burger'/>
+        <div className='h-full  flex justify-between flex-col sm:flex-row border-2 border-green-600 rounded-xl w-100 p-4'>
+          <div className=' flex py-12'>
+            <img className= 'flex sm:h-96 h-80 px-10 ' src={`../../images/${food.name}.jpg`} alt='burger'/>
           </div>
-          <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-500'>Title</span>
-            <span>{food.name}</span>
+          <div className='my-4 px-20'>
+            <h1 className='font-black sm:text-6xl text-3xl my-4'>{food.name} burger</h1>
+            <h2 className='py-6 text-3xl'>{food.cal} Cal</h2>
+            {/* <span className='text-xl mr-4 text-gray-500'>Title</span>
+            <span>{food.name}</span> */}
+            <p className='max-w-xs'>
+            Enjoy the cheesy deliciousness of a McDonald's Cheeseburger! Our simple, classic cheeseburger begins with a 100% pure beef burger patty seasoned with just a pinch of salt and pepper. The McDonald's Cheeseburger is topped with a tangy pickle, chopped onions, ketchup, mustard, and a slice of melty American cheese. It contains no artificial flavors, preservatives or added colors from artificial sources.* Our pickle contains an artificial preservative, so skip it if you like. For more delicious burger variations explore the McDonald's burger menu.
+            There are 300 calories in a McDonald's Cheeseburger. Order one today from the full menu in the app using contactless Mobile Order & Pay for pickup or McDelivery® and earn points on every order with MyMcDonald's Rewards to redeem for a free Cheeseburger.^
+            </p>
           </div>
           
           
