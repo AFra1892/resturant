@@ -2,23 +2,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #fff;
+    color: #ec1c24;
     padding: 2rem 6rem;
-    background-color: #379237;
+    /* background-color: #379237; */
     
 }
 
 .gpt3__navbar-links{
     flex: 1;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
 }
 
 .gpt3__navbar-links_logo{
    
     margin-right: 2rem;
-    color: #fff;
+    color: #ec1c24;
 }
 
 .gpt3__navbar-links_container{
@@ -34,7 +33,7 @@
 .gpt3__navbar-sign a,
 .gpt3__navbar-menu_container p
 {
-    color: #fff;
+    color: #ec1c24;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 18px;
@@ -49,7 +48,7 @@
 {
     padding: 0.5rem 1rem;
     color: #fff;
-    background-color: #379237;
+    background-color: #ec1c24;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 18px;

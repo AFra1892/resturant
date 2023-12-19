@@ -1,10 +1,29 @@
+.rect{
+    right: 100px;
+    height: 620px;
+    width: 450px;
+    position: absolute;
+    z-index: -1;
+    background-color: #fdbd10;
+}
+.yellow-bg{
+    background-color: #fdbd10;
+  }
+  .yellow-text{
+    color: #fdbd10;
+  }
+  .red-bg{
+    background-color:#ec1c24 ;
+  }
+  .red-text{
+    color: #ec1c24;
+  }
 .pizzahub__header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 .pizzahub__header-content h1{
-    color:#fff;
     max-width: 500px;
     font-family: var(--font-family);
     font-weight: 800;
@@ -12,9 +31,7 @@
     line-height: 75px;
     letter-spacing: -0.04em;
 }
-.pizzahub__header-content h1>span{
-    color: #379237;
-}
+
 .pizzahub__header-content p{
     
     max-width: 500px;
@@ -22,15 +39,14 @@ font-family: var(--font-family);
     font-weight: 400;
     font-size: 20px;
     line-height: 28px;
-    color: #fff;
 
     margin-top: 1.5rem;
 }
 .pizzahub__header-content_btns button{
-    padding: 0.5rem 1rem;
-    margin: 2rem 1rem;
+    padding: 0.5rem 0.5rem;
+    margin: 2rem 0rem;
     color: #fff;
-    background-color: #379237;
+    background-color: #ec1c24;
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 18px;

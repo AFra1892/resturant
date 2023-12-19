@@ -21,12 +21,12 @@ const Navbar = () => {
 const [toggleMenu,setToggleMenu] = useState(false)
   return (
     <div className='gpt3__navbar'>
-      <div className='gpt3__navbar-links'>
-        <div className='gpt3__navbar-links_logo'>
-          <h1>Pizza Hub</h1>
-        </div>
+      <div className='gpt3__navbar-links flex gap-x-16'>
         <div className='gpt3__navbar-links_container'>
           <NavList/>
+        </div>
+        <div className='gpt3__navbar-links_logo'>
+          <h1 className='text-2xl border-3 border-red-600 '>BURGER LAND</h1>
         </div>
       </div>
       <div className='gpt3__navbar-sign'>
