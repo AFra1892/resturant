@@ -18,10 +18,10 @@ const NewNav = () => {
             <ul>
                 <li><a href="/" data-text="Home">Home</a></li>
                 <li><a href="/about" data-text="About">About</a></li>
-                <li><a href="/menu" data-text="Services">Menu</a></li>
-                <li><a href="/cart" data-text="Team">Cart</a></li>
-                <li><a href="#" data-text="Portfolio">Portfolio</a></li>
-                <li><a href="#" data-text="Contact">Contact</a></li>
+                <li><a href="/menu" data-text="Menu">Menu</a></li>
+                <li><a href="/cart" data-text="Cart">Cart</a></li>
+                <li><a href="/signup" data-text="Sign in">Sign in</a></li>
+                <li><a href="/signin" data-text="Log in">Log in</a></li>
             </ul>
         </div>
     </div>

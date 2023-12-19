@@ -29,43 +29,53 @@ function Landing() {
   
   return (
     <div className="App">
-      <div className='flex flex-row items-center justify-between bg-blue-300 h-24 p-12'>
-        <div className='gpt3__navbar-links_container'>
+      <div className='rect h-screen rounded-b-3xl'></div>
+
+      {/* Navbar setup */}
+      <div className='flex flex-row items-center justify-between  h-24 p-12'>
+        <div className='gpt3__navbar-links_container sm:text-xl hidden'>
         <NavList/>
         </div>
         <div className='flex'>
-        <h1 className='text-2xl font-bold'>BURGER LAND</h1>
+        <h1 className='text-2xl font-bold  text-red-500  border-2 border-red-500 p-2'>BURGER LAND</h1>
+        </div>
+        <div className='flex sm:pl-32 lg:28'>
+            <a href="/signin"><button class="bn632-hover bn28 sm:block">Log in</button></a>
+            <a href="/signup"><button class="bn632-hover bn28 sm:block">Sign up</button></a>
         </div>
         <div className='flex'>
         <NewNav/>
         </div>
       </div>
-
-
-
-
-
-
-
-
+{/* Header setup */}
       <div className='header flex flex-row justify-between mr-32'>
         <div className="pizzahub__header section__padding">
               <div className="pizzahub__header-content">
                   <h1 className='yellow-text'>SIMPLE AND <span className='red-text'>TASTY</span> RECIPES</h1>
                   <p className='text-gray-400'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
                   <div className="pizzahub__header-content_btns flex gap-x-4">
-                      <button type='button'>Add to Cart</button>
-                      <button type='button'>Book a Table</button>
+                  <a href="#"><button class="bn632-hover bn28">Book A Table</button></a>
+
                   </div>
               </div>
           </div>
           <div className=''>
-            <div className='rect h-screen rounded-b-3xl'>.</div>
             <div className='circle absolute'></div>
-              <img className='mr-32 pt-24' src='images/nobg.png' alt='burger'/>
+              <img className='mr-32 pt-24 custom' src='images/nobg.png' alt='burger'/>
           </div>
         </div>
-      
+      {/* Menu Items */}
+      <div className='p-4 flex sm:flex-row flex-col gap-24  justify-center items-center'>
+        <div className='cart-glass flex p-4'>
+          <img  src='images/nobg.png' alt='pic'/>
+        </div>
+        <div className='cart-glass flex p-4'>
+          <img  src='images/nobg.png' alt='pic'/>
+        </div>
+        <div className='cart-glass flex p-4'>
+          <img  src='images/nobg.png' alt='pic'/>
+        </div>
+      </div>
       {/* <BestDeal/> */}
     </div>
   );

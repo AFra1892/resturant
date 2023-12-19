@@ -1,3 +1,56 @@
+.cart-glass{
+    /* From https://css.glass */
+    height: 250px;
+    width: 250px;
+background: rgba(253, 189, 16, 1);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(9.1px);
+-webkit-backdrop-filter: blur(9.1px);
+border: 1px solid rgba(253, 189, 16, 1);
+}
+/* buttun design */
+.bn632-hover {
+    width: 160px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:focus {
+    outline: none;
+  }
+  
+  .bn632-hover.bn28 {
+    background-image: linear-gradient(
+      to right,
+      #eb3941,
+      #f15e64,
+      #e14e53,
+      #e2373f
+    );
+    box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
+  }
+
 .circle{
     z-index: -1;
     opacity: .1;
@@ -10,10 +63,10 @@
 
 .rect{
     right: 100px;
-    height: 620px;
+    height: 720px;
     width: 450px;
     position: absolute;
-    z-index: -2;
+    z-index: -8;
     background-color: #fdbd10;
 }
 .yellow-bg{
@@ -112,7 +165,17 @@ font-family: var(--font-family);
         height:700px;
         width: 700px;
     }
-    
-
+    .bn632-hover {
+        display:none;
+    }
+    .circle{
+        display: none;
+    }
+    .rect{
+        display: none;
+    }
+    .custom{
+        display: none;
+    }
     
 }
