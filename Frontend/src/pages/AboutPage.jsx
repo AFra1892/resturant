@@ -1,8 +1,10 @@
 import React from 'react'
 import AboutCard from '../components/aboutCard/AboutCard'
+import CustomNav from '../components/navbar/CustomNav'
 const AboutPage = () => {
   return (
     <>
+        <CustomNav/>
         <div  className='restirant__about section__padding'>
             <h2>About Our Foods</h2>
             <div className='resturant__about-cards'>
