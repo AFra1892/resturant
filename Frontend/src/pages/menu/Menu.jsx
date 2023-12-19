@@ -2,6 +2,7 @@ import {useState,useEffect} from 'react'
 import axios from 'axios'
 import './shop.css'
 import MenuSingleCard from './MenuSingleCard';
+import CustomNav from '../../components/navbar/CustomNav';
 
 const Menu = ({logedInUser}) => {
     const [menu,setMenu] = useState([])
@@ -20,20 +21,14 @@ const Menu = ({logedInUser}) => {
     
   return (
     <>
-        
-    <div className='flex'>
-        <div className="">
-                  <button 
-                id="favorite-category"
-                    onClick={()=>setCat("favorite")}
-                    className=''
-                >
-                    Favorite ⭐ 
-                </button> 
-                <ul className="">
+    <CustomNav/>
+    <div className='flex p-12 sm:flex-row flex-col gap-12'>
+        <div className=" flex sm:flex-col flex-row gap-12">
+                   
+                <ul className="flex sm:flex-col flex-row gap-12 ">
                 <button 
                         onClick={()=>setCat("burger")}
-                        className=''
+                        className='border-2 border-red-500 sm:p-6 p-4 sm:text-2x text-lg'
                     >
                         Burger 🍔
                     </button>   
@@ -41,7 +36,7 @@ const Menu = ({logedInUser}) => {
                     
                     <button 
                         onClick={()=>setCat("nugget")}
-                        className=''
+                        className='border-2 border-red-500 sm:p-6 p-4 sm:text-2x text-lg'
                     >
                         Chicken 🍗
                     </button>
@@ -49,7 +44,7 @@ const Menu = ({logedInUser}) => {
                    
                     <button 
                         onClick={()=>setCat("drink")}
-                        className=''
+                        className='border-2 border-red-500 sm:p-6 p-4 sm:text-2x text-lg'
                     >
                         Drink 🍹
                     </button>

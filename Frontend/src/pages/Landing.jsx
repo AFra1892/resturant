@@ -36,8 +36,8 @@ function Landing() {
         <div className='gpt3__navbar-links_container sm:text-xl hidden'>
         <NavList/>
         </div>
-        <div className='flex'>
-        <h1 className='text-2xl font-bold  text-red-500  border-2 border-red-500 p-2'>BURGER LAND</h1>
+        <div className='flex sm:pl-28'>
+        <h1 className='text-3xl font-bold  text-red-500   border-4 border-red-500 p-2'>BURGER LAND</h1>
         </div>
         <div className='flex sm:pl-32 lg:28'>
             <a href="/signin"><button class="bn632-hover bn28 sm:block">Log in</button></a>
@@ -76,7 +76,7 @@ function Landing() {
           <img  src='images/nobg.png' alt='pic'/>
         </div>
       </div>
-      {/* <BestDeal/> */}
+      <BestDeal/>
     </div>
   );
 }

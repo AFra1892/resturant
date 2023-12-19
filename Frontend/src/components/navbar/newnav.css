@@ -9,6 +9,7 @@
     align-items: center;
     background: #fff;
     transition: 0.5s;
+    z-index: 5;
 }
 
 .fullPageMenu.active {
@@ -107,6 +108,7 @@
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: 10px;
+    z-index: 6;
 }
 
 .menuicon.active {
