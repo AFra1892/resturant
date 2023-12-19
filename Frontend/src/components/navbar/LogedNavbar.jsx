@@ -16,10 +16,10 @@ const NewNav = () => {
         
         <div class="nav ">
             <ul>
-                <li><a href="#" data-text="Home">Home</a></li>
-                <li><a href="#" data-text="About">About</a></li>
-                <li><a href="#" data-text="Services">Services</a></li>
-                <li><a href="#" data-text="Team">Team</a></li>
+                <li><a href="/" data-text="Home">Home</a></li>
+                <li><a href="/about" data-text="About">About</a></li>
+                <li><a href="/menu" data-text="Services">Menu</a></li>
+                <li><a href="/cart" data-text="Team">Cart</a></li>
                 <li><a href="#" data-text="Portfolio">Portfolio</a></li>
                 <li><a href="#" data-text="Contact">Contact</a></li>
             </ul>

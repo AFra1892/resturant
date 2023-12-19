@@ -4,8 +4,21 @@ import React from 'react';
 import BestDeal from '../components/bestDeal/BestDeal';
 // import people from '../assets/people.png'
 import '../components/header/header.css'
+import '../components/navbar/navbar.css'
 import NewNav from '../components/navbar/LogedNavbar';
+import { FaCartShopping } from "react-icons/fa6";
+
 function Landing() {
+  const NavList = ()=>(
+    <>
+      <p><a className='fade-in' href='/'>Home</a></p>
+      <p><a className='fade-in' href='/menu'>Menu</a></p>
+      <p><a className='fade-in' href='/about'>About</a></p>
+      <p><a className='fade-in' href='#gallery'>Gallery</a></p>
+      <p><a className='fade-in' href='#contact'>Contact</a></p>
+      <a className='fade-in' href='/cart'><FaCartShopping color='white' size={20} /></a>
+    </>
+  )
   // const slides = [
   //   { url: "ig1.jpg", title: "beach",},
   //   { url: "ig2.jpg", title: "boat" },
@@ -16,7 +29,25 @@ function Landing() {
   
   return (
     <div className="App">
-      <NewNav/>
+      <div className='flex flex-row items-center justify-between bg-blue-300 h-24 p-12'>
+        <div className='gpt3__navbar-links_container'>
+        <NavList/>
+        </div>
+        <div className='flex'>
+        <h1 className='text-2xl font-bold'>BURGER LAND</h1>
+        </div>
+        <div className='flex'>
+        <NewNav/>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
       <div className='header flex flex-row justify-between mr-32'>
         <div className="pizzahub__header section__padding">
               <div className="pizzahub__header-content">
