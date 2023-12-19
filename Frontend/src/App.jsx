@@ -35,7 +35,6 @@ function App() {
   return (
     <div className="App">
       <ShareContextProvider>
-        <Navbar/>
     <Router>
       <Routes>
         <Route path='/' element={logedInUser.name === 'admin'?<ManageMenu/>:<Landing/>}/>

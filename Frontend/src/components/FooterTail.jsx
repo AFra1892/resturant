@@ -2,7 +2,7 @@ import React from 'react'
 
 const FooterTail = () => {
   return (
-    <div class=" bg-gray-900">
+    <div class=" bg-yellow-500">
         <div class="max-w-2xl mx-auto text-white py-10">
             <div class="text-center">
                 <h3 class="text-3xl mb-3"> Download our App </h3>
@@ -24,7 +24,7 @@ const FooterTail = () => {
                     </div>
                 </div>
             </div>
-            <div class="mt-28 flex flex-col md:flex-row md:justify-between items-center text-sm text-gray-400">
+            <div class="mt-28 flex flex-col md:flex-row md:justify-between items-center text-sm text-black">
                 <p class="order-2 md:order-1 mt-8 md:mt-0"> &copy; Beautiful Footer, 2023. </p>
                 <div class="order-1 md:order-2">
                     <span class="px-2">About us</span>

@@ -4,6 +4,7 @@ import React from 'react';
 import BestDeal from '../components/bestDeal/BestDeal';
 // import people from '../assets/people.png'
 import '../components/header/header.css'
+import NewNav from '../components/navbar/LogedNavbar';
 function Landing() {
   // const slides = [
   //   { url: "ig1.jpg", title: "beach",},
@@ -15,6 +16,7 @@ function Landing() {
   
   return (
     <div className="App">
+      <NewNav/>
       <div className='header flex flex-row justify-between mr-32'>
         <div className="pizzahub__header section__padding">
               <div className="pizzahub__header-content">
@@ -27,12 +29,13 @@ function Landing() {
               </div>
           </div>
           <div className=''>
-            <div className='rect rounded-b-3xl'>.</div>
-            <img className='mr-32' src='images/double-cheese-nobg.png' alt='burger'/>
+            <div className='rect h-screen rounded-b-3xl'>.</div>
+            <div className='circle absolute'></div>
+              <img className='mr-32 pt-24' src='images/nobg.png' alt='burger'/>
           </div>
         </div>
       
-      <BestDeal/>
+      {/* <BestDeal/> */}
     </div>
   );
 }
