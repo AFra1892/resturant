@@ -24,7 +24,7 @@ const SignUp = () => {
           .then(() => {
             
             enqueueSnackbar('Food Created successfully', { variant: 'success' });
-            navigate('/');
+            navigate('/signin');
           })
           .catch((error) => {
             

@@ -21,6 +21,7 @@ import FooterTail from './components/FooterTail';
 import DeleteOrder from './pages/cart/DeleteCartItem';
 import Error from './pages/Error';
 import LogedNavbar from './components/navbar/LogedNavbar';
+import Contact from './pages/Contact';
 
 function App() {
   const [logedInUser,setLogedInUser] = useState({})
@@ -39,6 +40,7 @@ function App() {
       <Routes>
         <Route path='/' element={logedInUser.name === 'admin'?<ManageMenu/>:<Landing/>}/>
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/menu/chicken" element={<ItemDetail />} />
         {/* control panel */}
         {/* <Route path="/test" element={<ManageMenu/>} /> */}

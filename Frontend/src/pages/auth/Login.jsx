@@ -20,7 +20,7 @@ const Login = () => {
       localStorage.setItem('token',`Bearer ${data.token}`)
       // alert('login successful')
       enqueueSnackbar('Loged in successfully', { variant: 'success' });
-      window.location.href = '/dashboard'
+      window.location.href = useremail==='admin@gmail.com'?'/': '/dashboard'
     }else{
       enqueueSnackbar('Please Check your Username or Password', { variant: 'error' });
     }

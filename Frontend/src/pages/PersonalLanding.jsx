@@ -31,11 +31,11 @@ const DashTest = ({logedInUser}) => {
   return (
     <>
     <CustomNav/>
-    <div className='h-screen bg-green-700' style={styles}>
+    <div className='h-screen bg-yellow-500' style={styles}>
         <IoMdExit className='cursor-pointer absolute right-0' size={40} color='red' onClick={clickHandeler} />
 		<div className="pizzahub__header section__padding">
             <div className="pizzahub__header-content">
-                <h1>Hello <span>{logedInUser.name}</span> Welcome to PizzaHub</h1>
+                <h1>Hello <span>{logedInUser.name}</span> Welcome to BURGER LAND</h1>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
                 <div className="pizzahub__header-content_btns">
                     <button  type='button'>Button</button>
