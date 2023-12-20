@@ -38,7 +38,7 @@ const MenuSingleCard = ({ food,logedInUser }) => {
               <BsInfoCircle className='text-2xl text-green-800' />
           </Link>
         </div>
-        <button className="addToCartBttn" onClick={addToOrder}>
+        <button className="addToCartBttn " onClick={addToOrder}>
         Add To Cart 
       </button>
      

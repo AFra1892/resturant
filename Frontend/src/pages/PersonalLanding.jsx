@@ -1,6 +1,6 @@
 import React from 'react'
 import { IoMdExit } from "react-icons/io";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , Link } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 import OrderHistory from '../components/OrderHistory';
 import CustomNav from '../components/navbar/CustomNav';
@@ -23,16 +23,14 @@ const DashTest = ({logedInUser}) => {
         backgroundImage: `url(${logedInUser.img})`,
         backgroundSize: 'cover'
     }
-    function clickHandeler(){
-		localStorage.removeItem('token')
-		enqueueSnackbar('Loged out successfully', { variant: 'success' });
-		navigate('/')
-	}
+    
   return (
     <>
     <CustomNav/>
     <div className='h-screen bg-yellow-500' style={styles}>
-        <IoMdExit className='cursor-pointer absolute right-0' size={40} color='red' onClick={clickHandeler} />
+          <Link to={`/dashboard/logout`}>
+            <IoMdExit className='cursor-pointer absolute right-0' size={40} color='red'/>
+          </Link>
 		<div className="pizzahub__header section__padding">
             <div className="pizzahub__header-content">
                 <h1>Hello <span>{logedInUser.name}</span> Welcome to BURGER LAND</h1>

@@ -7,6 +7,7 @@ import '../components/header/header.css'
 import '../components/navbar/navbar.css'
 import NewNav from '../components/navbar/LogedNavbar';
 import { FaCartShopping } from "react-icons/fa6";
+import FooterTail from '../components/FooterTail'
 
 function Landing() {
   const NavList = ()=>(
@@ -77,6 +78,7 @@ function Landing() {
         </div>
       </div>
       <BestDeal/>
+      <FooterTail/>
     </div>
   );
 }
