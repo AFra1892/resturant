@@ -9,6 +9,10 @@ const MenuSingleCard = ({ food,logedInUser }) => {
 
   const {name , orders} = logedInUser
     const addToOrder = ()=>{
+      if(name ==null){
+        enqueueSnackbar('Log in befor ordering', { variant: 'error' });
+
+      }else{
       enqueueSnackbar('Added to Order List', { variant: 'success' });
       
         
@@ -23,9 +27,10 @@ const MenuSingleCard = ({ food,logedInUser }) => {
         console.log(err);
       })
     
-    
+      }
     }
     
+
   return (
     <div className='border-2 border-gray-500 rounded-lg px-4 py-2 m-4 relative hover:shadow-xl'>
         <img src={food.imgUrl} alt='classicburger'/>
