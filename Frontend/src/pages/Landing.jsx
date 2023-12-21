@@ -51,7 +51,7 @@ function Landing() {
                   <h1 className='yellow-text'>SIMPLE AND <span className='red-text'>TASTY</span> RECIPES</h1>
                   <p className='text-gray-400'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
                   <div className="pizzahub__header-content_btns flex gap-x-4">
-                  <a href="#"><button class="bn632-hover bn28">Book A Table</button></a>
+                  <button class="bn632-hover bn28">Book A Table</button>
 
                   </div>
               </div>
