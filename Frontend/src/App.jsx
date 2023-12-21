@@ -23,6 +23,7 @@ import Error from './pages/Error';
 import LogedNavbar from './components/navbar/LogedNavbar';
 import Contact from './pages/Contact';
 import LogOutAlert from './pages/LogOutAlert';
+import TestFramer from './pages/TestFramer'
 
 function App() {
   const [logedInUser,setLogedInUser] = useState({})
@@ -58,6 +59,10 @@ function App() {
         <Route path="/cart" element={<Cart logedInUser={logedInUser}/>} />
         <Route path="/cart/user/:name/delete/:id" element={<DeleteOrder/>} />
         <Route path="/shop" element={<Shop/>} />
+
+
+
+        <Route path="/testframer" element={<TestFramer/>} />
 
       </Routes>
       </Router>

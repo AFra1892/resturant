@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CartItem } from "./cart/cart-item";
+import axios from "axios";
 
 export const Cart = ({logedInUser})=>{
+
+
     const {name} = logedInUser
     const [testOrder , setTestOrder] = useState([])
-    async function loginUser(event){
+
+    
+    
+    async function showOrders(event){
         event.preventDefault()   
         const response = await fetch('http://localhost:5555/logeduserorders',{
         method:'POST',
@@ -14,10 +20,11 @@ export const Cart = ({logedInUser})=>{
     const data = await response.json()
     setTestOrder(data.orders)
     }
+   
     return(
-    <div className="flex flex-col  justify-center items-center sm:flex-row bg-green-700 py-8">
+    <div  className="flex flex-col  justify-center items-center sm:flex-row bg-green-700 py-8">
         <div className="bg-green-700 h-auto pb-16 flex flex-col w-3/4 mr-12">
-            <button onClick={loginUser}  type="submit">Show Orders</button>
+            <button onClick={showOrders}  type="submit">Show Orders</button>
             <h1 className="text-4xl text-white font-bold">{logedInUser.name} This is your current Order:</h1>
             {testOrder.map((order)=>{
                 return <CartItem logedInUser={logedInUser} order={order} length={testOrder.length}/>

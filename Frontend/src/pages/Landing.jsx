@@ -8,6 +8,10 @@ import '../components/navbar/navbar.css'
 import NewNav from '../components/navbar/LogedNavbar';
 import { FaCartShopping } from "react-icons/fa6";
 import FooterTail from '../components/FooterTail'
+import {motion , useInView , useAnimate} from 'framer-motion'
+import NewSlider from '../components/Slider/NewSlider';
+import Comment from '../components/comment/Comment';
+
 
 function Landing() {
   const NavList = ()=>(
@@ -20,14 +24,7 @@ function Landing() {
       <a className='fade-in' href='/cart'><FaCartShopping color='white' size={20} /></a>
     </>
   )
-  // const slides = [
-  //   { url: "ig1.jpg", title: "beach",},
-  //   { url: "ig2.jpg", title: "boat" },
-  //   { url: "ig3.jpg", title: "forest" },
-  //   { url: "ig4.jpg", title: "city" },
-  //   { url: "ig5.jpg", title: "italy" },
-  // ];
-  
+
   return (
     <div className="App">
       <div className='rect h-screen rounded-b-3xl'></div>
@@ -65,19 +62,45 @@ function Landing() {
               <img className='mr-32 pt-24 custom' src='images/nobg.png' alt='burger'/>
           </div>
         </div>
+
+
+
       {/* Menu Items */}
-      <div className='p-4 flex sm:flex-row flex-col gap-24  justify-center items-center'>
-        <div className='cart-glass flex p-4'>
-          <img  src='images/nobg.png' alt='pic'/>
-        </div>
-        <div className='cart-glass flex p-4'>
-          <img  src='images/nobg.png' alt='pic'/>
-        </div>
-        <div className='cart-glass flex p-4'>
-          <img  src='images/nobg.png' alt='pic'/>
-        </div>
-      </div>
+     
+
+      {/* <motion.div className='p-4 flex sm:flex-row flex-col gap-24  justify-center items-center animated-div'
+      
+      initial ={{opacity:0 ,scale:0  , x:500}}
+      whileInView={{opacity:1 , scale:1 , x:0}}
+      transition={{duration:.8}}
+        >
+          
+  
+          <div className=' cart-glass flex p-4' >
+            <img  src='images/nobg.png' alt='pic'/>
+          </div>
+          <div className=' cart-glass flex p-4'>
+            <img  src='images/nobg.png' alt='pic'/>
+          </div>
+          <div className='cart-glass flex p-4'>
+            <img  src='images/nobg.png' alt='pic'/>
+          </div>
+  
+  
+        </motion.div> */}
+  
+
       <BestDeal/>
+      <motion.div 
+      className='flex sm:flex-row flex-col gap-y-12'
+      initial ={{opacity:0 ,transform: 'translateX(-100%)',filter: 'blur(3px)' }}
+      whileInView={{opacity:1 , transform: 'translateX(0)',filter: 'blur(0)' }}
+      transition={{duration:.8, delay:.5 ,staggerChildren: 0.5}}
+      >
+        <Comment/>
+        <Comment/>
+        <Comment/>
+      </motion.div>
       <FooterTail/>
     </div>
   );
