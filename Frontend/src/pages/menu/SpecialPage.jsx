@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar';
-
+import FooterTail from '../../components/FooterTail'
 
 
 
@@ -26,10 +26,11 @@ const SpecialPage = () => {
 
   return (
     <>
-    <div className=' h-auto p-4 pb-32'>
+    <Navbar/>
+    <div className=' h-screen p-4 pb-32 mb-9'>
       
       
-        <div className='h-full  flex justify-between flex-col sm:flex-row border-2 border-green-600 rounded-xl w-100 p-4'>
+        <div className='h-auto  flex justify-between flex-col sm:flex-row border-2 border-yellow-500 rounded-xl w-100 p-4 mb-8'>
           <div className=' flex py-12'>
             <img className= 'flex sm:h-96 h-80 px-10 ' src={`../../images/${food.name}.jpg`} alt='burger'/>
           </div>
@@ -48,6 +49,7 @@ const SpecialPage = () => {
         </div>
       
     </div>
+    <FooterTail/>
     </>
   );
 };
