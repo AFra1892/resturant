@@ -19,7 +19,6 @@ function Landing() {
       <p><a className='fade-in' href='/'>Home</a></p>
       <p><a className='fade-in' href='/menu'>Menu</a></p>
       <p><a className='fade-in' href='/about'>About</a></p>
-      <p><a className='fade-in' href='#gallery'>Gallery</a></p>
       <p><a className='fade-in' href='/contact'>Contact</a></p>
       <a className='fade-in' href='/cart'><FaCartShopping color='white' size={20} /></a>
     </>
