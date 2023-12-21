@@ -4,8 +4,8 @@ import Navbar from '../components/navbar/Navbar'
 const Contact = () => {
   return (
     <>
-    <Navbar/>
-    <div class="flex justify-center items-center w-screen h-screen bg-white mb-16">
+    {/* <Navbar/> */}
+    <div class=" p-8 flex justify-center items-center w-screen h-auto bg-white mb-16">
 	{/* <!-- COMPONENT CODE --> */}
 	<div class="container mx-auto my-4 px-4 lg:px-20">
 
@@ -79,13 +79,6 @@ const Contact = () => {
     {/* <!-- COMPONENT CODE --> */}
 </div>
 
-{/* <div class="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
-  <div>
-    <a title="Buy me a pizza" href="#" target="_blank" class="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
-      <img class="object-cover object-center w-full h-full rounded-full" src="https://img.icons8.com/emoji/48/000000/pizza-emoji.png"/>
-    </a>
-  </div>
-</div> */}
     </>
   )
 }

@@ -30,7 +30,7 @@ const SpecialPage = () => {
     <div className=' h-screen p-4 pb-32 mb-9'>
       
       
-        <div className='h-auto  flex justify-between flex-col sm:flex-row border-2 border-yellow-500 rounded-xl w-100 p-4 mb-8'>
+        <div className='flex justify-between flex-col sm:flex-row border-2 border-yellow-500 rounded-xl w-100 p-4 mb-8'>
           <div className=' flex py-12'>
             <img className= 'flex sm:h-96 h-80 px-10 ' src={`../../images/${food.name}.jpg`} alt='burger'/>
           </div>
@@ -48,8 +48,8 @@ const SpecialPage = () => {
           
         </div>
       
-    </div>
     <FooterTail/>
+    </div>
     </>
   );
 };

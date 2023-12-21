@@ -2,6 +2,7 @@ import React from 'react'
 import AboutCard from '../components/aboutCard/AboutCard'
 import CustomNav from '../components/navbar/CustomNav'
 import {motion} from 'framer-motion'
+import FooterTail from '../components/FooterTail'
 
 const AboutPage = () => {
   return (
@@ -21,6 +22,7 @@ const AboutPage = () => {
               <AboutCard img='images/about4.jpg' heading='Commitment to Quality' dec="We're dedicated to improving the way we prepare our quality food and the ingredients that go into it"/>
             </div>
         </motion.div>
+        <FooterTail/>
     </>
   )
 }
