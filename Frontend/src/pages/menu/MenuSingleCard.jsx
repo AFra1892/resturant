@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useSnackbar } from 'notistack';
 import '../../components/header/header.css'
-import {motion} from 'framer-motion'
 
 const MenuSingleCard = ({ food,logedInUser }) => {
   const { enqueueSnackbar } = useSnackbar();
@@ -35,7 +34,7 @@ const MenuSingleCard = ({ food,logedInUser }) => {
 
   return (
     <div 
-      className='border-2 border-gray-500 rounded-lg px-4 py-2 m-4 relative hover:shadow-xl hover:bg-yellow-500'
+      className='bg-white border-2 border-yellow-500 rounded-lg p-4 sm:m-4 m-4 relative hover:shadow-xl hover:bg-yellow-500'
       
     >
         <img src={food.imgUrl} alt='classicburger'/>
@@ -46,7 +45,9 @@ const MenuSingleCard = ({ food,logedInUser }) => {
         
        
         <div className=' flex justify-between items-center'>
-          <button className="bn632-hover bn28 " onClick={addToOrder}> Add To Cart </button> 
+          <button onClick={addToOrder} class="border-2 border-red-700 rounded-lg px-3 py-2 bg-red-500 hover:bg-red-400 text-white cursor-pointer  ">
+          Add to Cart
+        </button> 
           <Link to={`/menu/${food._id}`}>
               <BsInfoCircle className='text-2xl text-red-600' />
           </Link>
