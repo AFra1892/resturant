@@ -113,7 +113,7 @@ const SignUp = () => {
 
     </div>
   </div>
-  <div class="bg-red-500 hidden lg:block w-full md:w-1/2 xl:w-1/3 h-screen">
+  <div class="bg-red-600 hidden lg:block w-full md:w-1/2 xl:w-1/3 h-screen">
     {/* <img src="https://source.unsplash.com/random" alt="" class="w-full h-full object-cover"/> */}
   </div>
 </section>

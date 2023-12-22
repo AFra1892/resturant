@@ -1,10 +1,11 @@
 import {useState } from 'react'
 import { BsInfoCircle } from 'react-icons/bs';
-import { IoIosAddCircle } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useSnackbar } from 'notistack';
 import '../../components/header/header.css'
+import {motion} from 'framer-motion'
+
 const MenuSingleCard = ({ food,logedInUser }) => {
   const { enqueueSnackbar } = useSnackbar();
 
@@ -33,7 +34,10 @@ const MenuSingleCard = ({ food,logedInUser }) => {
     
 
   return (
-    <div className='border-2 border-gray-500 rounded-lg px-4 py-2 m-4 relative hover:shadow-xl hover:bg-yellow-500'>
+    <div 
+      className='border-2 border-gray-500 rounded-lg px-4 py-2 m-4 relative hover:shadow-xl hover:bg-yellow-500'
+      
+    >
         <img src={food.imgUrl} alt='classicburger'/>
         <h2 className='my-1 text-gray-500'> title :  <span className='text-black'> {food.name}</span></h2>
         <h2 className='my-1 text-gray-500'> price :  <span className='text-black'> ${food.price} </span></h2>

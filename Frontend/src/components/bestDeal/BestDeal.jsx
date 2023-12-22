@@ -5,7 +5,7 @@ import {motion , useInView , useAnimate} from 'framer-motion'
 const BestDealContent = (props)=>(
     <motion.div 
       className='bestdeal-container'
-      initial ={{opacity:0 ,transform: 'translateX(100%)',filter: 'blur(3px)'}}
+      initial ={{opacity:0 ,transform: 'translateX(-100%)',filter: 'blur(3px)'}}
       whileInView={{opacity:1 , transform: 'translateX(0)',filter: 'blur(0)'}}
       transition={{duration:.8 , delay:.6}}
       

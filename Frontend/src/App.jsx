@@ -45,15 +45,15 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/menu/chicken" element={<ItemDetail />} />
         {/* control panel */}
-        {/* <Route path="/test" element={<ManageMenu/>} /> */}
-        <Route path="/test/create" element={logedInUser.name === 'admin'?<CreateFood/>:<Error/>} />
-        <Route path="/test/delete/:id" element={logedInUser.name ==='admin' ? <DeleteFood/> : <Error/>} />
+        <Route path="/dashboard/create" element={logedInUser.name === 'admin'?<CreateFood/>:<Error/>} />
+        <Route path="/dashboard/delete/:id" element={logedInUser.name ==='admin' ? <DeleteFood/> : <Error/>} />
         {/* menu based on database */}
         <Route path="/menu" element={<Menu logedInUser={logedInUser}/>} />
         <Route path="/menu/:id" element={<SpecialPage />} />
         {/* authorization pages */}
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<Login />} />
+
         <Route path="/dashboard" element={<PersonalLanding logedInUser={logedInUser}/>} />
         <Route path="/dashboard/logout" element={<LogOutAlert/>} />
         <Route path="/cart" element={<Cart logedInUser={logedInUser}/>} />
