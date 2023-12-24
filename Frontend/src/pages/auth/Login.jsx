@@ -10,12 +10,12 @@ const Login = () => {
 
   function loginUser(event){
     event.preventDefault()
-    axios.post('http://localhost:5555/api/login',{
+    axios.post('http://localhost:5555/users/api/login',{
       useremail:useremail,
       userpass:userpass
     })
     .then((res)=>{
-      console.log(res.data.token);
+      // console.log(res.data.token);
       if(res.data.token){
         localStorage.setItem('token',`Bearer ${res.data.token}`)
         enqueueSnackbar('Loged in successfully', { variant: 'success' });

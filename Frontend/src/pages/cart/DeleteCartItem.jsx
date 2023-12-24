@@ -12,7 +12,7 @@ const DeleteOrder = () => {
   const handleDeleteOrder = () => {
     
     axios
-      .delete(`http://localhost:5555/${name}/user/${id}`)
+      .delete(`http://localhost:5555/users/${name}/user/${id}`)
       .then(() => {
         enqueueSnackbar('item Deleted From Order List', { variant: 'success' });
         navigate('/cart');

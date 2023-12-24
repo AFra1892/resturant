@@ -1,13 +1,10 @@
 import express from'express';
-
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import foodsRoute from './routes/foodsRoute.js';
 import usersRoute from './routes/users.Route.js'
 import cors from 'cors';
 import {User} from './models/userModel.js'
-import {Food} from './models/foodModel.js'
-
 import jwt from 'jsonwebtoken'
 
 const app = express();
@@ -27,33 +24,7 @@ app.get('/', (request, response) => {
 
 
 
-app.post('/api/login',async(req,res)=>{
 
-  
-  const user = await User.findOne({useremail:req.body.useremail})
-   console.log(req.body.useremail); //inja dastresi darim be data vorodi ke tavasot karbar (input ha)
-
-  if(!user){
-    console.log('user not found');
-    return res.status(404).json({status:'error',msg:"There is no exsiting acoount with this email"})
-  }
-  if(!(user.userpass === req.body.userpass) ){
-    return res.status(404).json({status:'error',msg:"Wrong Password"})
-
-  }
-  const token = jwt.sign({
-    name:user.username,
-    email:user.useremail,
-    img:user.usercustomimg,
-
-  },process.env.JWT_SECRET)
-
-  // const decoded = jwt.verify(token,process.env.JWT_SECRET)
-  // const userr = decoded
-  
-  res.status(201).json({status:'ok',token:token })
-  
-})
 
 app.get('/api/personal', async(req,res)=>{
   const token = req.headers['x-access-token']
@@ -107,23 +78,6 @@ app.post('/logeduserorders',async(req,res)=>{
 
   
 })
-
-app.delete('/:name/user/:id', async (request, response) => {
-  try {
-    const { id , name } = request.params;
-
-    const result = await User.findOneAndUpdate({username:name}, {$pull:{orders:{_id:id}}});
-    
-    response.status(200).json(result)
-  } catch (error) {
-    console.log(error.message);
-    response.status(500).send({ message: error.message });
-  }
-});
-
-
-
-
 
 
 app.use('/foods', foodsRoute);

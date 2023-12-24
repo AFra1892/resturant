@@ -1,6 +1,8 @@
 import express from 'express'
 import {User} from '../models/userModel.js'
 import {Food} from '../models/foodModel.js'
+import jwt from 'jsonwebtoken'
+
 const router = express.Router();
 
 router.post('/newuser',async(req,res)=>{
@@ -34,13 +36,56 @@ router.post('/newuser',async(req,res)=>{
     }
   });
 
-// Route for Get One Book from database by id
 router.get('/:username', async (request, response) => {
   try {
     const { username } = request.params;
 
     const user = await User.find({username});
     return response.status(200).json(user);
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
+
+//route for login logic
+router.post('/api/login',async(req,res)=>{
+
+  
+  const user = await User.findOne({useremail:req.body.useremail})
+   console.log(req.body.useremail); //inja dastresi darim be data vorodi ke tavasot karbar (input ha)
+
+  if(!user){
+    console.log('user not found');
+    return res.status(404).json({status:'error',msg:"There is no exsiting acoount with this email"})
+  }
+  if(!(user.userpass === req.body.userpass) ){
+    return res.status(404).json({status:'error',msg:"Wrong Password"})
+
+  }
+  const token = jwt.sign({
+    name:user.username,
+    email:user.useremail,
+    img:user.usercustomimg,
+
+  },process.env.JWT_SECRET)
+
+  // const decoded = jwt.verify(token,process.env.JWT_SECRET)
+  // const userr = decoded
+  
+  res.status(201).json({status:'ok',token:token })
+  
+});
+
+
+router.delete('/:name/user/:id', async (request, response) => {
+  try {
+    const { id , name } = request.params;
+
+    const result = await User.findOneAndUpdate({username:name}, {$pull:{orders:{_id:id}}});
+    
+    response.status(200).json(result)
   } catch (error) {
     console.log(error.message);
     response.status(500).send({ message: error.message });
