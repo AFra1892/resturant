@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutCard from '../components/aboutCard/AboutCard'
+import AboutCard from '../components/about-page-card/AboutCard'
 import CustomNav from '../components/navbar/CustomNav'
 import {motion} from 'framer-motion'
 import FooterTail from '../components/Footer/FooterTail'

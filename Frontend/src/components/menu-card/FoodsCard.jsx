@@ -1,5 +1,5 @@
 
-import FoodSingleCard from '../components/foodsinglecard/FoodSingleCard';
+import FoodSingleCard from './FoodSingleCard';
 
 const FoodsCard = ({ foods }) => {
   return (

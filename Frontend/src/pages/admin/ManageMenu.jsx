@@ -6,7 +6,7 @@ import { IoMdExit } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 import { MdOutlineAddBox } from 'react-icons/md';
-import FoodsCard from '../../components/FoodsCard';
+import FoodsCard from '../../components/menu-card/FoodsCard';
 
 const ManageMenu = () => {
   const [foods, setFoods] = useState([]);
