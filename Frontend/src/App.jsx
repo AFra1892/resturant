@@ -4,7 +4,6 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing'
 import AboutPage from './pages/AboutPage';
-import ItemDetail from './components/ItemDetail/ItemDetail';
 import ManageMenu from './pages/admin/ManageMenu';
 import CreateFood from './pages/admin/CreateFood';
 import DeleteFood from './pages/admin/DeleteFood'
@@ -36,7 +35,6 @@ function App() {
         <Route path='/' element={logedInUser.name === 'admin'?<ManageMenu/>:<Landing/>}/>
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/menu/chicken" element={<ItemDetail />} />
         {/* control panel */}
         <Route path="/dashboard/create" element={logedInUser.name === 'admin'?<CreateFood/>:<Error/>} />
         <Route path="/dashboard/delete/:id" element={logedInUser.name ==='admin' ? <DeleteFood/> : <Error/>} />

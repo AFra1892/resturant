@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { CartItem } from "./cart-item";
-import axios from "axios";
-import { useSnackbar } from 'notistack';
+
 
 export const Cart = ({logedInUser})=>{
 
     const [isShown, setIsShown] = useState(false)
-    const {name, email} = logedInUser
+    const {name} = logedInUser
     const [testOrder , setTestOrder] = useState([])
-    const { enqueueSnackbar } = useSnackbar();
-    const [count, setCount] = useState(0)
+    
 
     // useEffect(()=>{
     //     axios.post('http://localhost:5555/logeduserorders',{
