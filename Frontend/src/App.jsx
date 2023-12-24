@@ -5,21 +5,19 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing'
 import AboutPage from './pages/AboutPage';
 import ItemDetail from './components/ItemDetail/ItemDetail';
-import ManageMenu from './pages/ManageMenu';
-import CreateFood from './pages/CreateFood';
-import DeleteFood from './pages/DeleteFood'
+import ManageMenu from './pages/admin/ManageMenu';
+import CreateFood from './pages/admin/CreateFood';
+import DeleteFood from './pages/admin/DeleteFood'
 import Menu from './pages/menu/Menu'
 import SpecialPage from './pages/menu/SpecialPage'
 import SignUp from './pages/auth/SignUp';
 import Login from './pages/auth/Login';
 import PersonalLanding from './pages/PersonalLanding'
-import { ShareContextProvider } from './context/share-context';
 import {Cart} from './pages/cart/cart'
 import DeleteOrder from './pages/cart/DeleteCartItem';
 import Error from './pages/Error';
 import ContactPage from './pages/ContactPage';
 import LogOutAlert from './pages/LogOutAlert';
-import TestFramer from './pages/TestFramer'
 
 function App() {
   const [logedInUser,setLogedInUser] = useState({})
@@ -33,7 +31,6 @@ function App() {
     
   return (
     <div className="App">
-      <ShareContextProvider>
     <Router>
       <Routes>
         <Route path='/' element={logedInUser.name === 'admin'?<ManageMenu/>:<Landing/>}/>
@@ -57,11 +54,9 @@ function App() {
 
 
 
-        <Route path="/testframer" element={<TestFramer/>} />
 
       </Routes>
       </Router>
-      </ShareContextProvider>
     </div>
   );
 }
