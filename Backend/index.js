@@ -28,12 +28,18 @@ app.get('/', (request, response) => {
 
 
 app.post('/api/login',async(req,res)=>{
+
+  
   const user = await User.findOne({useremail:req.body.useremail})
-  // console.log(user.username);
-  //  console.log(req.body.useremail); //inja dastresi darim be data vorodi gtavasot karbar (input ha)
+   console.log(req.body.useremail); //inja dastresi darim be data vorodi ke tavasot karbar (input ha)
+
   if(!user){
-    
-    return {status:'error',error:'invalid login'}
+    console.log('user not found');
+    return res.status(404).json({status:'error',msg:"There is no exsiting acoount with this email"})
+  }
+  if(!(user.userpass === req.body.userpass) ){
+    return res.status(404).json({status:'error',msg:"Wrong Password"})
+
   }
   const token = jwt.sign({
     name:user.username,
@@ -42,11 +48,10 @@ app.post('/api/login',async(req,res)=>{
 
   },process.env.JWT_SECRET)
 
-  const decoded = jwt.verify(token,process.env.JWT_SECRET)
-  const userr = decoded
-    // console.log(userr);
+  // const decoded = jwt.verify(token,process.env.JWT_SECRET)
+  // const userr = decoded
   
-  return res.send({status:'ok',token:token })
+  res.status(201).json({status:'ok',token:token })
   
 })
 
@@ -84,10 +89,23 @@ app.put('/addItem',async(req,res)=>{
   
   res.status(200).send('updated')
 })
+
+
+
+
 app.post('/logeduserorders',async(req,res)=>{
   const user = await User.findOne({username:req.body.name})
+   console.log(req.body.name); //inja dastresi darim be data vorodi ke tavasot karbar (input ha)
+   
+  //  if(!user){
+  //    console.log('user not found');
+  //    return res.status(404).json({status:'error',msg:"There is no exsiting acoount with this email"})
+  //  }
   const orders = user.orders
-  res.json({orders:orders})
+  // console.log(orders);
+  res.status(200).json({orders:orders})
+
+  
 })
 
 app.delete('/:name/user/:id', async (request, response) => {

@@ -1,13 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { CartItem } from "./cart/cart-item";
 import axios from "axios";
+import { useSnackbar } from 'notistack';
 
 export const Cart = ({logedInUser})=>{
 
     const [isShown, setIsShown] = useState(false)
-    const {name} = logedInUser
+    const {name, email} = logedInUser
     const [testOrder , setTestOrder] = useState([])
+    const { enqueueSnackbar } = useSnackbar();
+    const [count, setCount] = useState(0)
 
+    // useEffect(()=>{
+    //     axios.post('http://localhost:5555/logeduserorders',{
+    //         passedemail:email,
+    //         passedname:name
+    //     })
+    //     .then((res)=>{
+    //         console.log(res.data.user.orders);
+    //         setTestOrder(res.data.user.orders)
+    //         setIsShown(true)
+    //     })
+    //     .catch((res)=>{
+    //         enqueueSnackbar(`${res.response.data.msg}`, { variant: 'error' });
+    //       })
+    // },[testOrder])
     
     
     async function showOrders(event){
@@ -46,7 +63,7 @@ export const Cart = ({logedInUser})=>{
 
             </div>
         </>
-}
+ } 
         </div>
     );
 

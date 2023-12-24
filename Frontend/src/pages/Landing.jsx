@@ -2,14 +2,12 @@ import '../App.css';
 import React from 'react';
 // import Slider from '../components/Slider/Slider';
 import BestDeal from '../components/bestDeal/BestDeal';
-// import people from '../assets/people.png'
 import '../components/header/header.css'
 import '../components/navbar/navbar.css'
 import NewNav from '../components/navbar/LogedNavbar';
 import { FaCartShopping } from "react-icons/fa6";
 import FooterTail from '../components/FooterTail'
-import {motion , useInView , useAnimate} from 'framer-motion'
-import NewSlider from '../components/Slider/NewSlider';
+import {motion} from 'framer-motion'
 import Comment from '../components/comment/Comment';
 
 
@@ -37,8 +35,8 @@ function Landing() {
         <h1 className='text-3xl font-bold  text-red-500   border-4 border-red-500 p-2'>BURGER LAND</h1>
         </div>
         <div className='flex sm:pl-32 lg:28'>
-            <a href="/signin"><button class="bn632-hover bn28 sm:block">Log in</button></a>
-            <a href="/signup"><button class="bn632-hover bn28 sm:block">Sign up</button></a>
+            <a href="/signin"><button className="bn632-hover bn28 sm:block">Log in</button></a>
+            <a href="/signup"><button className="bn632-hover bn28 sm:block">Sign up</button></a>
         </div>
         <div className='flex'>
         <NewNav/>
@@ -51,12 +49,12 @@ function Landing() {
                   <h1 className='yellow-text'>SIMPLE AND <span className='red-text'>TASTY</span> RECIPES</h1>
                   <p className='text-gray-400'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
                   <div className="pizzahub__header-content_btns flex gap-x-4">
-                  <button class="bn632-hover bn28">Book A Table</button>
+                  <button className="bn632-hover bn28">Book A Table</button>
 
                   </div>
               </div>
           </div>
-          <div className=''>
+          <div>
             <div className='circle absolute'></div>
               <img className='mr-32 pt-24 custom' src='images/nobg.png' alt='burger'/>
           </div>

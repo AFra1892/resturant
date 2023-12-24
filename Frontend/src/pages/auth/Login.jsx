@@ -1,30 +1,56 @@
-import {useState} from 'react'
-import jwt from 'jsonwebtoken'
+import { useState} from 'react'
 import { useSnackbar } from 'notistack';
+import axios from 'axios'
+
 const Login = () => {
   const [useremail,setUserEmail] = useState('')
   const [userpass,setUserPass] = useState('')
   const { enqueueSnackbar } = useSnackbar();
-  async function loginUser(event){
-    event.preventDefault()
-    const response = await fetch('http://localhost:5555/api/login',{
-      method:'POST',
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({useremail,userpass}), //inaro mifrestim backend
+  
 
+  function loginUser(event){
+    event.preventDefault()
+    axios.post('http://localhost:5555/api/login',{
+      useremail:useremail,
+      userpass:userpass
     })
-    const data = await response.json() // json nakoni password ro nemifahme
-    console.log(`this what i fetched ${data.token}`);
-    
-    if(data.token){
-      localStorage.setItem('token',`Bearer ${data.token}`)
-      // alert('login successful')
-      enqueueSnackbar('Loged in successfully', { variant: 'success' });
-      window.location.href =  '/dashboard'
-    }else{
-      enqueueSnackbar('Please Check your Username or Password', { variant: 'error' });
-    }
+    .then((res)=>{
+      console.log(res.data.token);
+      if(res.data.token){
+        localStorage.setItem('token',`Bearer ${res.data.token}`)
+        enqueueSnackbar('Loged in successfully', { variant: 'success' });
+        window.location.href =  '/dashboard'
+      }else{
+        enqueueSnackbar('Please Check your Username or Password', { variant: 'error' });
+      }
+      
+    })
+    .catch((res)=>{
+      enqueueSnackbar(`${res.response.data.msg}`, { variant: 'error' });
+    })
   }
+
+  // async function loginUser(event){
+  //   event.preventDefault()
+
+  //   const response = await fetch('http://localhost:5555/api/login',{
+  //     method:'POST',
+  //     headers:{"Content-Type":"application/json"},
+  //     body:JSON.stringify({useremail,userpass}), //inaro mifrestim backend
+
+  //   })
+  //   const data = await response.json() // json nakoni password ro nemifahme
+  //   console.log(`this what i fetched ${data.token}`);
+    
+  //   if(data.token){
+  //     localStorage.setItem('token',`Bearer ${data.token}`)
+  //     // alert('login successful')
+  //     enqueueSnackbar('Loged in successfully', { variant: 'success' });
+  //     window.location.href =  '/dashboard'
+  //   }else{
+  //     enqueueSnackbar('Please Check your Username or Password', { variant: 'error' });
+  //   }
+  // }
 
   return (
     <section class="flex flex-col md:flex-row h-screen items-center">

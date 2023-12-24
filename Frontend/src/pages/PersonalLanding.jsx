@@ -38,7 +38,7 @@ const DashTest = ({logedInUser}) => {
                 <h1>Hello <span>{logedInUser.name}</span> Welcome to BURGER LAND</h1>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
                 <div className="pizzahub__header-content_btns">
-                <button class="bn632-hover bn28">Book A Table</button>
+                <button className="bn632-hover bn28">Book A Table</button>
                 </div>
             </div>
         </div>

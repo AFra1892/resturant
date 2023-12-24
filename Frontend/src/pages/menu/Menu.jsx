@@ -4,6 +4,7 @@ import './shop.css'
 import MenuSingleCard from './MenuSingleCard';
 import CustomNav from '../../components/navbar/CustomNav';
 import Spinner from '../../components/Spinner';
+import FooterTail from '../../components/FooterTail';
 
 
 const Menu = ({logedInUser}) => {
@@ -32,7 +33,7 @@ const Menu = ({logedInUser}) => {
     {loading ? <Spinner/> : (
 
     
-    <div className='bg-green-700 flex p-12 sm:flex-row flex-col gap-12'>
+    <div className=' bg-green-700 flex p-12 sm:flex-row flex-col gap-12'>
         <div className=" flex sm:flex-col flex-row gap-12">
                    
                 <ul className="flex sm:flex-col flex-row gap-12 ">
@@ -73,6 +74,7 @@ const Menu = ({logedInUser}) => {
     </div>
     </div>
     )}
+    <FooterTail/>
     </>
   )
 }

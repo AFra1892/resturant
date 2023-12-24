@@ -1,4 +1,4 @@
-import { useState,useEffect, useContext } from 'react';
+import { useState,useEffect} from 'react';
 import jwt from 'jsonwebtoken'
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -16,11 +16,8 @@ import PersonalLanding from './pages/PersonalLanding'
 import { ShareContextProvider } from './context/share-context';
 import {Cart} from './pages/cart'
 import { Shop } from './pages/shop/shop';
-import Navbar from './components/navbar/Navbar';
-import FooterTail from './components/FooterTail';
 import DeleteOrder from './pages/cart/DeleteCartItem';
 import Error from './pages/Error';
-import LogedNavbar from './components/navbar/LogedNavbar';
 import Contact from './pages/Contact';
 import LogOutAlert from './pages/LogOutAlert';
 import TestFramer from './pages/TestFramer'
