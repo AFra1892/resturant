@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Navbar from '../../components/navbar/Navbar';
-import FooterTail from '../../components/FooterTail'
+import FooterTail from '../../components/Footer/FooterTail'
 
 
 

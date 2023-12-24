@@ -6,7 +6,7 @@ import '../components/header/header.css'
 import '../components/navbar/navbar.css'
 import NewNav from '../components/navbar/LogedNavbar';
 import { FaCartShopping } from "react-icons/fa6";
-import FooterTail from '../components/FooterTail'
+import FooterTail from '../components/Footer/FooterTail'
 import {motion} from 'framer-motion'
 import Comment from '../components/comment/Comment';
 

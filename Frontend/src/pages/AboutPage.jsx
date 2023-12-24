@@ -2,7 +2,7 @@ import React from 'react'
 import AboutCard from '../components/aboutCard/AboutCard'
 import CustomNav from '../components/navbar/CustomNav'
 import {motion} from 'framer-motion'
-import FooterTail from '../components/FooterTail'
+import FooterTail from '../components/Footer/FooterTail'
 
 const AboutPage = () => {
   return (

@@ -5,7 +5,7 @@ import { useSnackbar } from 'notistack';
 import OrderHistory from '../components/OrderHistory';
 import CustomNav from '../components/navbar/CustomNav';
 import '../components/header/header.css'
-import FooterTail from '../components/FooterTail';
+import FooterTail from '../components/Footer/FooterTail';
 const DashTest = ({logedInUser}) => {
     const navigate = useNavigate();
     const { enqueueSnackbar } = useSnackbar();

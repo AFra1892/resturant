@@ -4,7 +4,7 @@ import './shop.css'
 import MenuSingleCard from './MenuSingleCard';
 import CustomNav from '../../components/navbar/CustomNav';
 import Spinner from '../../components/Spinner';
-import FooterTail from '../../components/FooterTail';
+import FooterTail from '../../components/Footer/FooterTail';
 
 
 const Menu = ({logedInUser}) => {
