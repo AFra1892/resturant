@@ -14,11 +14,10 @@ import SignUp from './pages/auth/SignUp';
 import Login from './pages/auth/Login';
 import PersonalLanding from './pages/PersonalLanding'
 import { ShareContextProvider } from './context/share-context';
-import {Cart} from './pages/cart'
-import { Shop } from './pages/shop/shop';
+import {Cart} from './pages/cart/cart'
 import DeleteOrder from './pages/cart/DeleteCartItem';
 import Error from './pages/Error';
-import Contact from './pages/Contact';
+import ContactPage from './pages/ContactPage';
 import LogOutAlert from './pages/LogOutAlert';
 import TestFramer from './pages/TestFramer'
 
@@ -39,7 +38,7 @@ function App() {
       <Routes>
         <Route path='/' element={logedInUser.name === 'admin'?<ManageMenu/>:<Landing/>}/>
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="/menu/chicken" element={<ItemDetail />} />
         {/* control panel */}
         <Route path="/dashboard/create" element={logedInUser.name === 'admin'?<CreateFood/>:<Error/>} />
@@ -55,7 +54,6 @@ function App() {
         <Route path="/dashboard/logout" element={<LogOutAlert/>} />
         <Route path="/cart" element={<Cart logedInUser={logedInUser}/>} />
         <Route path="/cart/user/:name/delete/:id" element={<DeleteOrder/>} />
-        <Route path="/shop" element={<Shop/>} />
 
 
 

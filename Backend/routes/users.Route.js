@@ -91,7 +91,7 @@ router.delete('/:name/user/:id', async (request, response) => {
     response.status(500).send({ message: error.message });
   }
 });
-app.post('/api/show/orders',async(req,res)=>{
+router.post('/api/show/orders',async(req,res)=>{
   const user = await User.findOne({username:req.body.name})
    console.log(req.body.name); //inja dastresi darim be data vorodi ke tavasot karbar (input ha)
    
@@ -105,7 +105,7 @@ app.post('/api/show/orders',async(req,res)=>{
 
   
 });
-app.put('/api/orders/addItem',async(req,res)=>{
+router.put('/api/orders/addItem',async(req,res)=>{
   console.log(req.body.data.username);
   const user = await User.findOneAndUpdate({username:req.body.data.username},  { $push: { orders: req.body.data.order } })
   

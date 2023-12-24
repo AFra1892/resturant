@@ -2,31 +2,14 @@ import React , { useState } from "react";
 import { IoIosRemoveCircleOutline } from "react-icons/io";
 import './cart.css'
 import {Link} from 'react-router-dom'
+
 export const CartItem = ({order,logedInUser}) =>{
   const {name} = logedInUser
     const {_id  ,price , imgUrl}  = order;
     const [count, setCount] = useState(1);
     const [totPrice , setTotPrice] = useState(price)
 
-    //kar nemikone
-    // const removeFromOrder = ()=>{
-    //   alert('item deleted from order list')
-      
-        
-    //   axios.put("http://localhost:5555/deleteItem", {
-        
-    //     data: {username:namee,order:order}            
-    //     })
-    //   .then((res) => {
-    //     console.log(res.data);      
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   })
     
-    
-    // }
-
     const handleIncrease = () => {
       setCount(count + 1);
       setTotPrice(totPrice+price)

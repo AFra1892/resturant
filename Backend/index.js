@@ -24,7 +24,7 @@ app.get('/', (request, response) => {
 
 
 
-
+// dont know what are this route for
 
 app.get('/api/personal', async(req,res)=>{
   const token = req.headers['x-access-token']
@@ -40,6 +40,9 @@ app.get('/api/personal', async(req,res)=>{
     res.json({status:'error',error:'invalid token'})
   }
 })
+
+// dont know what are this route for
+
 app.get('/api/coddingaddict',(req, res,) => {
   const authHeader = req.headers.authorization
 

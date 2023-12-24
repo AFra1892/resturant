@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CartItem } from "./cart/cart-item";
+import { CartItem } from "./cart-item";
 import axios from "axios";
 import { useSnackbar } from 'notistack';
 
