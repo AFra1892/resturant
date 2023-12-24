@@ -17,7 +17,7 @@ const MenuSingleCard = ({ food,logedInUser }) => {
       enqueueSnackbar('Added to Order List', { variant: 'success' });
       
         
-      axios.put("http://localhost:5555/addItem", {
+      axios.put("http://localhost:5555/users/api/orders/addItem", {
         
         data: {username:name,order:food}            
         })

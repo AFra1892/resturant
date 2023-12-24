@@ -29,7 +29,7 @@ export const Cart = ({logedInUser})=>{
     
     async function showOrders(event){
         event.preventDefault()   
-        const response = await fetch('http://localhost:5555/logeduserorders',{
+        const response = await fetch('http://localhost:5555/users/api/show/orders',{
         method:'POST',
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify({name}), //inaro mifrestim backend

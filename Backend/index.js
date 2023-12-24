@@ -54,30 +54,6 @@ app.get('/api/coddingaddict',(req, res,) => {
     res.status(200).json({name,email,orders})
     
 })
-app.put('/addItem',async(req,res)=>{
-  console.log(req.body.data.username);
-  const user = await User.findOneAndUpdate({username:req.body.data.username},  { $push: { orders: req.body.data.order } })
-  
-  res.status(200).send('updated')
-})
-
-
-
-
-app.post('/logeduserorders',async(req,res)=>{
-  const user = await User.findOne({username:req.body.name})
-   console.log(req.body.name); //inja dastresi darim be data vorodi ke tavasot karbar (input ha)
-   
-  //  if(!user){
-  //    console.log('user not found');
-  //    return res.status(404).json({status:'error',msg:"There is no exsiting acoount with this email"})
-  //  }
-  const orders = user.orders
-  // console.log(orders);
-  res.status(200).json({orders:orders})
-
-  
-})
 
 
 app.use('/foods', foodsRoute);
