@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../components/header/header.css'
 import './navbar.css'
-import NewNav from './LogedNavbar'
+import NewNav from './Navbar'
 import { FaCartShopping } from "react-icons/fa6";
 
 const CustomNav = () => {

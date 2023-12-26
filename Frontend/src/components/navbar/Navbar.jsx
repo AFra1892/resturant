@@ -1,56 +1,66 @@
-import React, {useState} from 'react'
-import {RiMenu3Line, RiCloseLine} from 'react-icons/ri'
-import './navbar.css'
+import React from 'react'
 import { FaCartShopping } from "react-icons/fa6";
-const NavList = ()=>(
-  <>
-    <p><a className='fade-in' href='/'>Home</a></p>
-    <p><a className='fade-in' href='/menu'>Menu</a></p>
-    <p><a className='fade-in' href='/about'>About</a></p>
-    <p><a className='fade-in' href='/contact'>Contact</a></p>
-    <a className='fade-in' href='/cart'><FaCartShopping color='white' size={20} /></a>
-  </>
-)
+
+import './newnav.css'
+  
+
+const NewNav = ({isLoged}) => {
 
 
-
-
-const Navbar = () => {
-
-const [toggleMenu,setToggleMenu] = useState(false)
+  function menuToggle() {
+    var nav = document.getElementById("nav")
+    var toggle = document.getElementById("toggle")
+    nav.classList.toggle("active")
+    toggle.classList.toggle("active")
+}
+   
   return (
-    <div className='gpt3__navbar'>
-      <div className='gpt3__navbar-links flex gap-x-16'>
-        <div className='gpt3__navbar-links_container'>
-          <NavList/>
+    <>
+    
+      <div className='flex flex-row items-center justify-between  h-24 p-12'>
+        {/* links right handside */}
+        <div className='gpt3__navbar-links_container sm:text-xl hidden'>
+          <p><a className='fade-in' href='/'>Home</a></p>
+          <p><a className='fade-in' href='/menu'>Menu</a></p>
+          <p><a className='fade-in' href='/about'>About</a></p>
+          <p><a className='fade-in' href='/contact'>Contact</a></p>
+          <a className='fade-in' href='/cart'><FaCartShopping color='white' size={20} /></a>
         </div>
-        <div className='gpt3__navbar-links_logo'>
-          <h1 className='text-2xl border-3 border-red-600 '>BURGER LAND</h1>
+        {/* logo */}
+        <div className='flex sm:pl-28 absolute right-1/2'>
+          <h1 className='text-3xl font-bold  text-red-500   border-4 border-red-500 p-2'>BURGER LAND</h1>
         </div>
-      </div>
-      <div className='gpt3__navbar-sign'>
-        <a href='/signin'>sign in</a>
-        <a href='/signup'>sign up</a>
-      </div>
-      <div className='gpt3__navbar-menu'>
-        {toggleMenu
-        ?<RiCloseLine color="#fff" size={27} onClick={()=>setToggleMenu(false)} />
-        :<RiMenu3Line color="#fff" size={27} onClick={()=>setToggleMenu(true)} />
-        }
-        {toggleMenu && (
-          <div className='gpt3__navbar-menu_container scale-up-center'>
-            <div className='gpt3__navbar-menu_container-links'>
-              <NavList/>
-              <div className='gpt3__navbar-menu_container-links-sign'>
-                <a href='/signin'>sign in</a>
-                <a href='/signup'>sign up</a>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
+        {/* auth btns */}
+        {isLoged ? "" :
+        <div className='flex sm:pl-32 lg:28 relative -right-48'>
+            <a href="/signin"><button className="bn632-hover bn28 sm:block">Log in</button></a>
+            <a href="/signup"><button className="bn632-hover bn28 sm:block">Sign up</button></a>
+        </div>
+}
+        {/* hambergur menu */}
+        <div className='flex'> 
+        <div class="fullPageMenu active" id="nav">
+        
+        <div class="nav ">
+            <ul>
+                <li><a href="/" data-text="Home">Home</a></li>
+                <li><a href="/about" data-text="About">About</a></li>
+                <li><a href="/menu" data-text="Menu">Menu</a></li>
+                <li><a href="/cart" data-text="Cart">Cart</a></li>
+                <li><a href="/signup" data-text="Sign in">Sign in</a></li>
+                <li><a href="/signin" data-text="Log in">Log in</a></li>
+            </ul>
+        </div>
     </div>
+    <button class="menuicon active" id="toggle" onClick={menuToggle}></button>
+     
+        </div>
+      </div>
+    
+    </>
+
+
   )
 }
 
-export default Navbar
+export default NewNav

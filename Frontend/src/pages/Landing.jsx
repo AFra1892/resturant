@@ -1,47 +1,25 @@
 import '../App.css';
 import React from 'react';
-// import Slider from '../components/Slider/Slider';
 import BestDeal from '../components/bestDeal/BestDeal';
 import '../components/header/header.css'
 import '../components/navbar/navbar.css'
-import NewNav from '../components/navbar/LogedNavbar';
-import { FaCartShopping } from "react-icons/fa6";
+import Navbar from '../components/navbar/Navbar';
 import FooterTail from '../components/Footer/FooterTail'
 import {motion} from 'framer-motion'
 import Comment from '../components/comment/Comment';
 
 
 function Landing() {
-  const NavList = ()=>(
-    <>
-      <p><a className='fade-in' href='/'>Home</a></p>
-      <p><a className='fade-in' href='/menu'>Menu</a></p>
-      <p><a className='fade-in' href='/about'>About</a></p>
-      <p><a className='fade-in' href='/contact'>Contact</a></p>
-      <a className='fade-in' href='/cart'><FaCartShopping color='white' size={20} /></a>
-    </>
-  )
+  
 
   return (
     <div className="App">
       <div className='rect h-screen rounded-b-3xl'></div>
 
       {/* Navbar setup */}
-      <div className='flex flex-row items-center justify-between  h-24 p-12'>
-        <div className='gpt3__navbar-links_container sm:text-xl hidden'>
-        <NavList/>
-        </div>
-        <div className='flex sm:pl-28'>
-        <h1 className='text-3xl font-bold  text-red-500   border-4 border-red-500 p-2'>BURGER LAND</h1>
-        </div>
-        <div className='flex sm:pl-32 lg:28'>
-            <a href="/signin"><button className="bn632-hover bn28 sm:block">Log in</button></a>
-            <a href="/signup"><button className="bn632-hover bn28 sm:block">Sign up</button></a>
-        </div>
-        <div className='flex'>
-        <NewNav/>
-        </div>
-      </div>
+        <Navbar isLoged={true}/>
+
+
 {/* Header setup */}
       <div className='header flex flex-row justify-between mr-32'>
         <div className="pizzahub__header section__padding">
