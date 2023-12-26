@@ -1,13 +1,13 @@
 import React from 'react'
 import AboutCard from '../components/about-page-card/AboutCard'
-import CustomNav from '../components/navbar/CustomNav'
+import Navbar from '../components/navbar/Navbar'
 import {motion} from 'framer-motion'
 import FooterTail from '../components/Footer/FooterTail'
 
 const AboutPage = () => {
   return (
     <>
-        <CustomNav/>
+        <Navbar isLoged={false}/>
         <h2 className='text-3xl text-red-500 font-bold p-8'>About Our Foods</h2>
         <motion.div 
          className='flex flex-col section__padding gap-y-16'

@@ -2,9 +2,9 @@ import {useState,useEffect} from 'react'
 import axios from 'axios'
 import './shop.css'
 import MenuSingleCard from './MenuSingleCard';
-import CustomNav from '../../components/navbar/CustomNav';
 import Spinner from '../../components/Spinner';
 import FooterTail from '../../components/Footer/FooterTail';
+import Navbar from '../../components/navbar/Navbar';
 
 
 const Menu = ({logedInUser}) => {
@@ -29,7 +29,7 @@ const Menu = ({logedInUser}) => {
     
   return (
     <>
-    <CustomNav/>
+    <Navbar isLoged={true}/>
     {loading ? <Spinner/> : (
 
     

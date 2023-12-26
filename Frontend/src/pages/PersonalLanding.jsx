@@ -3,23 +3,11 @@ import { IoMdExit } from "react-icons/io";
 import { useNavigate , Link } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 import OrderHistory from '../components/OrderHistory';
-import CustomNav from '../components/navbar/CustomNav';
 import '../components/header/header.css'
 import FooterTail from '../components/Footer/FooterTail';
+import Navbar from '../components/navbar/Navbar';
 const DashTest = ({logedInUser}) => {
-    const navigate = useNavigate();
-    const { enqueueSnackbar } = useSnackbar();
-    // montaqel kardam be app js ta betonam to menu ham dastresi dashte basham
-    // const [logedInUser,setLogedInUser] = useState({})
-    // useEffect(()=>{
-    //     const token = localStorage.getItem('token')
-    //     const t = token.split(' ')[1]
-    //     const decoded = jwt.verify(t,process.env.REACT_APP_JWT)
-    //     setLogedInUser(decoded)
-    // },[])
     
-    
-
   
     const styles = {
         backgroundImage: `url(${logedInUser.img})`,
@@ -28,7 +16,7 @@ const DashTest = ({logedInUser}) => {
     
   return (
     <>
-    <CustomNav/>
+    <Navbar isLoged={true}/>
     <div className='h-screen bg-yellow-500' style={styles}>
           <Link to={`/dashboard/logout`}>
             <IoMdExit className='cursor-pointer fixed right-0 mr-8' size={40} color='red'/>

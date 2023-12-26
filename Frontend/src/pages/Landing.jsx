@@ -17,7 +17,7 @@ function Landing() {
       <div className='rect h-screen rounded-b-3xl'></div>
 
       {/* Navbar setup */}
-        <Navbar isLoged={true}/>
+        <Navbar isLoged={false}/>
 
 
 {/* Header setup */}

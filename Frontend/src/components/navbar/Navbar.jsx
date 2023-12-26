@@ -1,10 +1,10 @@
 import React from 'react'
 import { FaCartShopping } from "react-icons/fa6";
 
-import './newnav.css'
+import './navbar.css'
   
 
-const NewNav = ({isLoged}) => {
+const Navbar = ({isLoged}) => {
 
 
   function menuToggle() {
@@ -63,4 +63,4 @@ const NewNav = ({isLoged}) => {
   )
 }
 
-export default NewNav
+export default Navbar
