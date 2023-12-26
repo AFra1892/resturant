@@ -1,11 +1,11 @@
 import React from 'react'
 import Navbar from '../components/navbar/Navbar'
-
+import FooterTail from '../components/Footer/FooterTail'
 const Contact = () => {
   return (
     <>
-    {/* <Navbar/> */}
-    <div class=" p-8 flex justify-center items-center w-screen h-auto bg-yellow-300 mb-16">
+    <Navbar isLoged={true}/>
+    <div class=" p-8 flex justify-center items-center w-screen h- bg-yellow-300 ">
 	{/* <!-- COMPONENT CODE --> */}
 	<div class="container mx-auto my-4  px-4 lg:px-20">
 
@@ -78,7 +78,7 @@ const Contact = () => {
     </div>
     {/* <!-- COMPONENT CODE --> */}
 </div>
-
+<FooterTail/>
     </>
   )
 }

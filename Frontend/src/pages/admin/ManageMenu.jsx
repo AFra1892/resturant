@@ -36,7 +36,7 @@ const ManageMenu = () => {
 	}
   return (
   <>
-    <Navbar/>
+    <Navbar isLoged={true}/>
     <div className='p-4'>
         <IoMdExit className='cursor-pointer absolute right-0' size={40} color='red' onClick={clickHandeler} />
         <div className='flex justify-between items-center'>
