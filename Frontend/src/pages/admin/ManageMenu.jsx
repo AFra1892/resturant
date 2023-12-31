@@ -42,7 +42,7 @@ const ManageMenu = () => {
         <div className='flex justify-between items-center'>
         <h1 className='text-3xl my-8'>Menu Items</h1>
 
-        <Link to='/test/create'>
+        <Link to='/dashboard/create'>
           <MdOutlineAddBox className='text-sky-800 text-4xl' />
         </Link>
       </div>

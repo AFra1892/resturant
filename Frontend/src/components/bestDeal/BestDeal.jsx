@@ -24,7 +24,7 @@ const BestDeal = () => {
     <div className='resturant__bestDeal section__padding'>
         <div className='resturant__bestDeal-leftCol'>
             <motion.img 
-            src='ig1.jpg'
+            src='images/bestdeal1.jpg'
             initial ={{opacity:0 ,scale:0 }}
             whileInView={{opacity:1 , scale:1}}
             transition={{duration:.8 }}
@@ -34,7 +34,7 @@ const BestDeal = () => {
         <div className='resturant__bestDeal-rightCol'>
             <BestDealContent name="Pretty Big Burger"/>
             <motion.img 
-              src='ig2.jpg'
+              src='images/bestdeal2.jpg'
               initial ={{opacity:0 ,scale:0 }}
               whileInView={{opacity:1 , scale:1}}
               transition={{duration:.8 }}

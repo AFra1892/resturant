@@ -17,7 +17,7 @@ export default function Header(){
           </div>
           <div>
             <div className='circle absolute'></div>
-              <img className='mr-32 pt-24 custom' src='images/nobg.png' alt='burger'/>
+              <img className='mr-32 pt-24 custom' src='images/Landing.png' alt='burger'/>
           </div>
         </div>
         </>

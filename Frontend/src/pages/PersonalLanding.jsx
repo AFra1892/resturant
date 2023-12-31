@@ -1,11 +1,11 @@
 import React from 'react'
-import { IoMdExit } from "react-icons/io";
-import { useNavigate , Link } from 'react-router-dom';
-import { useSnackbar } from 'notistack';
+
 import OrderHistory from '../components/OrderHistory';
 import '../components/header/header.css'
 import FooterTail from '../components/Footer/FooterTail';
 import Navbar from '../components/navbar/Navbar';
+import {motion} from 'framer-motion'
+
 const DashTest = ({logedInUser}) => {
     
   
@@ -13,14 +13,16 @@ const DashTest = ({logedInUser}) => {
         backgroundImage: `url(${logedInUser.img})`,
         backgroundSize: 'cover'
     }
-    
+    const imgStyles = {
+      height:'650px'
+    }
   return (
     <>
     <Navbar isLoged={true}/>
     <div className='h-screen bg-yellow-500' style={styles}>
-          <Link to={`/dashboard/logout`}>
+          {/* <Link to={'/dashboard/logout'}>
             <IoMdExit className='cursor-pointer fixed right-0 mr-8' size={40} color='red'/>
-          </Link>
+          </Link> */}
 		<div className="pizzahub__header section__padding">
             <div className="pizzahub__header-content">
                 <h1>Hello <span>{logedInUser.name}</span> Welcome to BURGER LAND</h1>
@@ -29,6 +31,14 @@ const DashTest = ({logedInUser}) => {
                 <button className="bn632-hover bn28">Book A Table</button>
                 </div>
             </div>
+        <motion.div 
+          className='flex absolute -right-28 top-12'
+          initial ={{opacity:0 ,transform: 'translateX(-100%)',filter: 'blur(3px)' }}
+          whileInView={{opacity:1 , transform: 'translateX(0)',filter: 'blur(0)' }}
+          transition={{duration:.8, delay:.1 ,staggerChildren: 0.5}}
+      >
+              <img style={imgStyles}  src='images/Personal-Landing.png' alt='burger'/>
+          </motion.div>
         </div>
     </div>
     <OrderHistory/>

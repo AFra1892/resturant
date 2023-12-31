@@ -26,7 +26,8 @@ router.post('/', async (request, response) => {
       imgUrl: request.body.imgUrl,
       price: request.body.price,
       cal: request.body.cal,
-      category: request.body.category
+      category: request.body.category,
+      idd:request.body.idd
     };
 
     const food = await Food.create(newFood);

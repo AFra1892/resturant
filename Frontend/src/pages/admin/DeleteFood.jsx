@@ -15,7 +15,7 @@ const DeleteBook = () => {
       .delete(`http://localhost:5555/foods/${id}`)
       .then(() => {
         enqueueSnackbar('Book Deleted successfully', { variant: 'success' });
-        navigate('/test');
+        navigate('/dashboard');
       })
       .catch((error) => {
         // alert('An error happened. Please Chack console');

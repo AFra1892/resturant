@@ -7,6 +7,7 @@ import { useSnackbar } from 'notistack';
 
 const CreateFood = () => {
   const [name, setName] = useState('');
+  const [idd, setIdd] = useState('');
   const [imgUrl,setImgUrl] = useState('');
   const [price,setPrice] = useState();
   const [cal,setCal] = useState();
@@ -16,6 +17,7 @@ const CreateFood = () => {
 
   const handleSaveBook = () => {
     const data = {
+      idd,
       name,
       imgUrl,
       price,
@@ -28,7 +30,7 @@ const CreateFood = () => {
       .then(() => {
         
         enqueueSnackbar('Food Created successfully', { variant: 'success' });
-        navigate('/test');
+        navigate('/dashboard');
       })
       .catch((error) => {
         
@@ -44,6 +46,15 @@ const CreateFood = () => {
       <h1 className='text-3xl my-4'>Create Book</h1>
       
       <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
+        <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500'>id</label>
+          <input
+            type='text'
+            value={idd}
+            onChange={(e) => setIdd(e.target.value)}
+            className='border-2 border-gray-500 px-4 py-2 w-full'
+          />
+        </div>
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500'>Name</label>
           <input

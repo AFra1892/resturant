@@ -15,7 +15,7 @@ const FoodSingleCard = ({ food }) => {
         <h2 className='my-1'>{food.cal}</h2>
         
         <img src={food.imgUrl} alt='classicburger'/>
-        <Link to={`/test/delete/${food._id}`}>
+        <Link to={`/dashboard/delete/${food._id}`}>
           <MdOutlineDelete className='text-2xl text-red-600 hover:text-black' />
         </Link>
     </div>
