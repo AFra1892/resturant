@@ -17,6 +17,7 @@ import DeleteOrder from './pages/cart/DeleteCartItem';
 import Error from './pages/Error';
 import ContactPage from './pages/ContactPage';
 import LogOutAlert from './pages/LogOutAlert';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   const [logedInUser,setLogedInUser] = useState({})
@@ -49,6 +50,7 @@ function App() {
         <Route path="/dashboard/logout" element={<LogOutAlert/>} />
         <Route path="/cart" element={<Cart logedInUser={logedInUser}/>} />
         <Route path="/cart/user/:name/delete/:id" element={<DeleteOrder/>} />
+        <Route path="/test/dashboard" element={<Dashboard/>} />
 
 
 

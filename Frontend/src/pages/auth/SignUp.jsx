@@ -1,5 +1,4 @@
 import {useState} from 'react'
-import imagee from '../../images/ig3.jpg'
 import { useSnackbar } from 'notistack';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
