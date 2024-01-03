@@ -1,4 +1,3 @@
-
 import React, {useState } from "react";
 import { CartItem } from "./cart-item";
 
@@ -10,21 +9,6 @@ export const Cart = ({logedInUser})=>{
     const [testOrder , setTestOrder] = useState([])
     
 
-    // useEffect(()=>{
-    //     axios.post('http://localhost:5555/logeduserorders',{
-    //         passedemail:email,
-    //         passedname:name
-    //     })
-    //     .then((res)=>{
-    //         console.log(res.data.user.orders);
-    //         setTestOrder(res.data.user.orders)
-    //         setIsShown(true)
-    //     })
-    //     .catch((res)=>{
-    //         enqueueSnackbar(`${res.response.data.msg}`, { variant: 'error' });
-    //       })
-    // },[testOrder])
-    
     
     async function showOrders(event){
         event.preventDefault()   

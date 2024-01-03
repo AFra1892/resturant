@@ -1,4 +1,3 @@
-
 import MenuSingleCard from './MenuSingleCard';
 
 const MenuCard = ({ menu ,cat }) => {
