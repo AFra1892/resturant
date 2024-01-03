@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
+import Sidebar from '../../components/dashboard/Sidebar';
+import Header from '../../components/dashboard/Header';
 
 const CreateFood = () => {
   const [name, setName] = useState('');
@@ -41,8 +43,10 @@ const CreateFood = () => {
   };
 
   return (
-    <div className='p-4'>
-      
+    <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
+    <Header/>
+      <Sidebar/>
+
       <h1 className='text-3xl my-4'>Create Book</h1>
       
       <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>

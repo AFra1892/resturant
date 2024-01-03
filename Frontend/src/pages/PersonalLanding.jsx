@@ -19,6 +19,16 @@ const DashTest = ({logedInUser}) => {
   return (
     <>
     <Navbar isLoged={true}/>
+    {logedInUser.name === 'admin' 
+    ?<div className='w-screen h-12 bg-blue-400  justify-center items-center'>
+
+    <a href='/admin/dashboard' className='text-2xl font-bold text-white'>
+
+      Admin Pannel
+    </a>
+    </div>
+    : ''
+    }
     <div className='h-screen bg-yellow-500' style={styles}>
           {/* <Link to={'/dashboard/logout'}>
             <IoMdExit className='cursor-pointer fixed right-0 mr-8' size={40} color='red'/>
@@ -41,7 +51,10 @@ const DashTest = ({logedInUser}) => {
           </motion.div>
         </div>
     </div>
-    <OrderHistory/>
+    {logedInUser.name === 'admin' 
+    ? ""
+    : <OrderHistory/>
+    }
     <FooterTail/>
     
     </>

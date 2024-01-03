@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import Navbar from '../../components/navbar/Navbar'
 import { Link } from 'react-router-dom';
-import { IoMdExit } from "react-icons/io";
-import { useNavigate } from 'react-router-dom';
-import { useSnackbar } from 'notistack';
 import { MdOutlineAddBox } from 'react-icons/md';
 import FoodsCard from '../../components/menu-card/FoodsCard';
+import Sidebar from '../../components/dashboard/Sidebar';
+import Header from '../../components/dashboard/Header';
 
 const ManageMenu = () => {
   const [foods, setFoods] = useState([]);
-  const { enqueueSnackbar } = useSnackbar();
-  const navigate = useNavigate();
+
 
   
 
@@ -29,27 +26,27 @@ const ManageMenu = () => {
       });
   }, []);
 
-  function clickHandeler(){
-		localStorage.removeItem('token')
-		enqueueSnackbar('Loged out successfully', { variant: 'success' });
-		navigate('/about')
-	}
+  
   return (
   <>
-    <Navbar isLoged={true}/>
-    <div className='p-4'>
-        <IoMdExit className='cursor-pointer absolute right-0' size={40} color='red' onClick={clickHandeler} />
+      <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
+        <Header/>
+        <Sidebar/>
+        <div className='ml-56 p-12'>
         <div className='flex justify-between items-center'>
-        <h1 className='text-3xl my-8'>Menu Items</h1>
+          <h1 className='text-3xl my-8'>Menu Items</h1>
 
-        <Link to='/dashboard/create'>
-          <MdOutlineAddBox className='text-sky-800 text-4xl' />
-        </Link>
-      </div>
-        <FoodsCard foods={foods} />
+          <Link to='/admin/dashboard/manage/create'>
+            <MdOutlineAddBox className='text-sky-800 text-4xl' />
+          </Link>
+        </div>
+          <FoodsCard foods={foods} />
+        </div>
     </div>
   </>
   );
 };
 
 export default ManageMenu;
+
+

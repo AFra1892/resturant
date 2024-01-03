@@ -19,7 +19,10 @@ const Login = () => {
       if(res.data.token){
         localStorage.setItem('token',`Bearer ${res.data.token}`)
         enqueueSnackbar('Loged in successfully', { variant: 'success' });
-        window.location.href =  '/dashboard'
+        
+          window.location.href = '/dashboard'
+
+        
       }else{
         enqueueSnackbar('Please Check your Username or Password', { variant: 'error' });
       }

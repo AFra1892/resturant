@@ -33,12 +33,12 @@ function App() {
     <div className="App">
     <Router>
       <Routes>
-        <Route path='/' element={logedInUser.name === 'admin'?<ManageMenu/>:<Landing/>}/>
+        <Route path='/' element={<Landing/>}/>
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         {/* control panel */}
-        <Route path="/dashboard/create" element={logedInUser.name === 'admin'?<CreateFood/>:<Error/>} />
-        <Route path="/dashboard/delete/:id" element={logedInUser.name ==='admin' ? <DeleteFood/> : <Error/>} />
+        <Route path="/admin/dashboard/manage/create" element={logedInUser.name === 'admin'?<CreateFood/>:<Error/>} />
+        <Route path="/admin/dashboard/manage/delete/:id" element={logedInUser.name ==='admin' ? <DeleteFood/> : <Error/>} />
         {/* menu based on database */}
         <Route path="/menu" element={<Menu logedInUser={logedInUser}/>} />
         <Route path="/menu/:id" element={<SpecialPage />} />
@@ -50,7 +50,8 @@ function App() {
         <Route path="/dashboard/logout" element={<LogOutAlert/>} />
         <Route path="/cart" element={<Cart logedInUser={logedInUser}/>} />
         <Route path="/cart/user/:name/delete/:id" element={<DeleteOrder/>} />
-        <Route path="/test/dashboard" element={<Dashboard/>} />
+        <Route path="/admin/dashboard" element={<Dashboard/>} />
+        <Route path="/admin/dashboard/manage" element={<ManageMenu/>} />
 
 
 
